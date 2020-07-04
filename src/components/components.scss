@@ -1,0 +1,8 @@
+@import "./AboutAuthor/aboutAuthor.scss";
+
+.about {
+  font-weight: bolder;
+  &-red {
+    color: red;
+  }
+}

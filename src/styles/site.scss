@@ -6,8 +6,7 @@
 @import "tailwindcss/utilities";
 
 // Import default styles for different aspects of the site
-@import './forms.scss';
-@import './auth.scss';
+@import "../components/components.scss";
 
 // Default anchor style
 a {

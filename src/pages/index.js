@@ -3,10 +3,10 @@ import React from "react";
 // Components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import AboutAuthor from "../components/AboutAuthor";
 
 // Styles
 import '../styles/site.scss';
-import '../styles/layout.scss';
 
 const IndexPage = () => (
   <Layout>
@@ -14,6 +14,7 @@ const IndexPage = () => (
     <h1 className="m-0 text-4xl text-center">
       Another Todo 
     </h1>
+    <AboutAuthor />
     <p>
       Built using the exciting new serverless JavaScript
       {` `}SDK <a className="link" href="https://userbase.com/" target="_blank" rel="noopener noreferrer">Userbase</a>.
