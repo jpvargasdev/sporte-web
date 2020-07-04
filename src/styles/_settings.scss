@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+// 1. Globals
+// ------
+$class-prefix: 'pds' !default;
+
+// EMpty maps for merging
+$grid-margins: () !default;
+$grid-column-gaps: () !default;
+$grid-breakpoints: (
+  'mobile':  ( min-width:  0px ),
+  'small':  ( min-width:  767px ),
+  'medium': ( min-width:  992px ),
+  'large':  ( min-width: 1200px )
+) !default;
+
+// 2. Colors
+// ------
+$base-background-color: white !default;
+$base-background-dark-color: #222431;
+$base-color: #EAF2F9 !default;
+$accent-color: #A70000 !default;
+$base-font-color: #333 !default;
+$base-font-secondary-color: #7A7887 !default;
+$base-link-color: #A70000 !default;
+$menu-background-color: rgba(gray, 0.8);
+$unaccent-color: #6FCC6A;
+
+// 3. Typography
+// ------
+$base-font-size: 100% !default; // 16px on all browsers
+$base-line-height: 1.4 !default;
+$base-font-weight: 500 !default;
+$base-font-family: 'Poppins', arial, sans-serif !default;
+$brand-font-regular: 'Poppins Regular', $base-font-family !default;
+$brand-font-medium: 'Poppins Medium', $base-font-family !default;
+$brand-font-bold: 'Poppins Bold', $base-font-family !default;
+
+// 4. Font Scaling
+$display-line-height: 1.25 !default;
+
+$base-font-sizes: (
+  87.5%,   //14px
+  100%,    //16px
+  112.5%   //18px
+) !default;
+
+$font-scale: (
+  12px,
+  14px,
+  16px,
+  18px,
+  20px,
+  24px,
+  28px,
+  32px,
+  36px,
+  42px,
+  48px,
+  54px,
+  60px,
+  68px,
+  76px,
+  84px,
+  92px
+) !default;
+
+$font-scale-breakpoints: (
+  0,          // Mobile first
+  22.500em,   // 460px
+  47.999em    // 768px
+) !default;
+
+// 5. Elevations
+$elevation1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$elevation2: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+$elevation3: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$elevation4: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+$elevation5: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+$elevation6: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+// 6. Mixins
+
+@mixin respond-to($breakpoint, $breakpoints: $grid-breakpoints) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+ 
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
