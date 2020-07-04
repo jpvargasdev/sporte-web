@@ -7674,13 +7674,6 @@ gatsby-page-utils@^0.2.15:
     lodash "^4.17.15"
     micromatch "^3.1.10"
 
-gatsby-plugin-create-client-paths@^2.1.22:
-  version "2.3.9"
-  resolved "https://registry.npmjs.org/gatsby-plugin-create-client-paths/-/gatsby-plugin-create-client-paths-2.3.9.tgz#93081091cc59758be3efd4673753acb3664baa10"
-  integrity sha512-e5kT2LhLWHSVWGdcyG6x5YT2zECAl7KImV7Q4M/TR+MOqa0Z9FCg664aljmaDZeR6tFAnZXzvmy29PPd9eOGbw==
-  dependencies:
-    "@babel/runtime" "^7.10.3"
-
 gatsby-plugin-manifest@^2.4.17:
   version "2.4.17"
   resolved "https://registry.npmjs.org/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.4.17.tgz#22b7dce25edf03338e8954ad847cd94adeaec31a"
@@ -7723,6 +7716,11 @@ gatsby-plugin-react-helmet@^3.1.21:
   integrity sha512-V/QJUEsiYNaf95bs8ueHDp6Xk3UonPhs9yi+GURGimZomnT/9ST75Tk7pwZwZmRKQNKC8feklUzLNa3pDqHjUw==
   dependencies:
     "@babel/runtime" "^7.10.3"
+
+gatsby-plugin-resolve-src@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-resolve-src/-/gatsby-plugin-resolve-src-2.1.0.tgz#290fec7dc7b55d05a41827b106aa04968b7549ba"
+  integrity sha512-uffIv/7VD4HLvMlxl6J9zzK9Y5L2jhrU+uDXzpAKHp6kWH/zNjgbnuE1UD05Z/xo7o4ngDkk2+GWOmcbQQRIXw==
 
 gatsby-plugin-sass@^2.1.27:
   version "2.3.10"

@@ -1,0 +1,17 @@
+header {
+  width: 100%;
+  height: 5%;
+  display: flex;
+  flex-direction: row;
+  border-bottom-width: medium;
+  border-color: green;
+
+  img {
+    width: 60px;
+    height: 10px;
+  }
+
+  .title {
+    color: red;
+  }
+}

@@ -1,26 +1,21 @@
 import React from "react";
 
 // Components
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import AboutAuthor from "../components/AboutAuthor";
+import Layout from "../components/Layout";
+import Seo from "../components/Seo";
 
-// Styles
-import '../styles/site.scss';
+// Templates
+import Home from "../templates/Home";
+
+import '../styles/index.scss';
 
 const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1 className="m-0 text-4xl text-center">
-      Another Todo 
-    </h1>
-    <AboutAuthor />
-    <p>
-      Built using the exciting new serverless JavaScript
-      {` `}SDK <a className="link" href="https://userbase.com/" target="_blank" rel="noopener noreferrer">Userbase</a>.
-    </p>
-    <p>You can read how to set up this Userbase Gatsby Starter here: <a className="link" href="https://github.com/jneterer/userbase-gatsby-starter/blob/master/README.md" target="_blank" rel="noopener noreferrer">README</a>.</p>
-  </Layout>
-)
+  <>
+    <Seo />
+    <Layout>
+      <Home />
+    </Layout>
+  </>
+);
 
-export default IndexPage
+export default IndexPage;
