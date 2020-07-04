@@ -1,0 +1,87 @@
+// Import tailwind styles
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+// Import default styles for different aspects of the site
+@import './forms.scss';
+@import './auth.scss';
+
+// Default anchor style
+a {
+  &.link {
+    @apply font-black;
+    color: theme('colors.purple.800') !important;
+    text-decoration: underline !important;
+    transition: color .25s ease;
+    &:hover {
+      color: theme('colors.black') !important;
+      transition: color .25s ease;
+    }
+  }
+  &:active, &:hover {
+    outline-width: 0;
+  }
+}
+
+@mixin btn-style($bg-color, $hover-bg-color, $text-color, $hover-text-color: false) {
+  background-color: theme($bg-color);
+  color: theme($text-color);
+  @screen sm {
+    @apply py-2 px-10;
+  }
+  @apply py-2 px-8 font-semibold rounded;
+  @if $hover-text-color {
+    transition: background-color .25s, color .25s ease;
+  } @else {
+    transition: background-color .25s ease;
+  }
+  &:not(:disabled):hover {
+    background-color: theme($hover-bg-color);
+    @if $hover-text-color {
+      color: theme($hover-text-color);
+      transition: background-color .25s, color .25s ease;
+    } @else {
+      transition: background-color .25s ease;
+    }
+  }
+  &:active, &:focus {
+    outline: none;
+  }
+}
+
+.btn {
+  &-primary {
+    @include btn-style('colors.purple.800', 'colors.purple.300', 'colors.white', 'colors.black');
+  }
+  &-secondary {
+    @include btn-style('colors.white', 'colors.black', 'colors.black', 'colors.white');
+  }
+  &-accent {
+    @include btn-style('colors.purple.800', 'colors.black', 'colors.white');
+    border: 1px solid white;
+  }
+  &-error {
+    @include btn-style('colors.red.600', 'colors.red.700', 'colors.white');
+  }
+  &-icon {
+    @apply rounded-full h-6 w-6 flex items-center justify-center;
+  }
+}
+
+button:disabled {
+  opacity: .5;
+  @apply transition-all duration-200;
+  &:hover {
+    cursor: default;
+  }
+}
+
+.error {
+  color: theme('colors.red.600');
+}
+.success {
+  color: theme('colors.green.600');
+}
