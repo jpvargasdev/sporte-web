@@ -31,7 +31,6 @@ module.exports = {
         display: "standalone",
       },
     },
-    `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {
