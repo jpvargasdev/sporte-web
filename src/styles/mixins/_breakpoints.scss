@@ -1,0 +1,20 @@
+/// Mixin to manage responsive breakpoints
+/// @author Hugo Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin min-width-media-query($breakpoint, $breakpoints: $grid-breakpoints) {
+  // If the key exists in the map
+  @if (type-of($value: breakpoint) == 'map') {
+    @if map-has-key($breakpoints, $breakpoint) {
+      // Prints a media query based on the value
+      @media #{inspect(map-get($breakpoints, $breakpoint))} {
+        @content;
+      }
+    }
+  }
+ 
+  // If the key doesn't exist in the map
+  @else {
+    @content;
+  }
+}
