@@ -1,6 +1,9 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-
+// window.___push was renamed to window.___navigate, has to do this renaming too or storybook would error on clicking links
+window.___navigate = pathname => {
+  action('NavigateTo:')(pathname)
+}
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
 // This global object isn't set in storybook context. We override it to empty functions (no-op),
