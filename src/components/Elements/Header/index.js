@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import IconHeader from '../../images/twitter.png';
+import IconHeader from '../../../images/twitter.png';
 
 // Components
 import { Button } from 'antd';

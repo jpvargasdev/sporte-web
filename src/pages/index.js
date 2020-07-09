@@ -4,8 +4,8 @@ import React from "react";
 import { graphql } from "gatsby";
 
 // components
-import Layout from "../components/Layout";
-import Seo from "../components/Seo";
+import Layout from "../components/Elements/Layout";
+import Seo from "../components/Base/Seo";
 
 // templates
 import Home from "../templates/Home";

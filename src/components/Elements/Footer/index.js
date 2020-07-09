@@ -1,12 +1,12 @@
 import React from 'react';
 import './Footer.scss';
 import PropTypes from 'prop-types';
-import ButtonFloat from '../ButtonFloat'
+import ButtonFloat from '../../Base/ButtonFloat'
 
 // icons
-import Facebook from '../../images/facebook.png';
-import Insta from '../../images/insta.png';
-import Twitter from '../../images/twitter.png';
+import Facebook from '../../../images/facebook.png';
+import Insta from '../../../images/insta.png';
+import Twitter from '../../../images/twitter.png';
 
 const Icon = [
   {

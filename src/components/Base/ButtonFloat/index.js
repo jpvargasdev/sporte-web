@@ -1,7 +1,7 @@
 import React from 'react';
 import './ButtonFloat.scss';
 import PropTypes from 'prop-types';
-import Arrow from '../../images/arrow.png';
+import Arrow from '../../../images/arrow.png';
 
 const ButtonFloat = ({icon}) => {
 

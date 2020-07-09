@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../Grid/Grid.scss';
-import Card from '../ImageCard';
+import './Grid.scss';
+import Card from '../../cards/ImageCard';
 
 const ListCard = [
   {

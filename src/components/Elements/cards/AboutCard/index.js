@@ -1,7 +1,7 @@
 import React from 'react';
 import './AboutCard.scss';
 import PropTypes from 'prop-types';
-import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
+import "../../Header/node_modules/antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import { Card, Avatar } from 'antd';
 
 const { Meta } = Card;

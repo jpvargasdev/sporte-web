@@ -2,8 +2,8 @@ import React from "react";
 
 //Components 
 
-import ImageCard from '../../components/ImageCard';
-import Grid from "../../components/Grid";
+import ImageCard from '../../components/Elements/cards/ImageCard';
+import Grid from "../../components/Elements/widgets/Grid";
 
 
 const Home = () => (
