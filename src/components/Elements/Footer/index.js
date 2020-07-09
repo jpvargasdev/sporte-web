@@ -1,30 +1,24 @@
 import React from 'react';
 import './Footer.scss';
 import PropTypes from 'prop-types';
-import ButtonFloat from '../../Base/ButtonFloat'
+import ButtonFloat from '../../Base/ButtonFloat';
 
 // icons
-import Facebook from '../../../images/facebook.png';
-import Insta from '../../../images/insta.png';
-import Twitter from '../../../images/twitter.png';
+import LogoInstagram from 'react-ionicons/lib/LogoInstagram';
+import LogoFacebook from 'react-ionicons/lib/LogoFacebook';
 
 const Icon = [
   {
-    url: Facebook,
+    Logo: LogoFacebook,
     text:'facebook'
   },
   {
-    url: Insta,
+    Logo: LogoInstagram,
     text:'instagram'
   },
-  {
-    url: Twitter,
-    text:'twitter'
-  }
 ];
 
 const Footer = ({
-  icon,
   title,
 }) => {
   return (
@@ -34,17 +28,10 @@ const Footer = ({
         <p>{title}</p>
         <div className="container">
           {
-            Icon.map(item => 
-              <div>
-                <button className='button_icon'>
-                  <img 
-                    src={item.url}
-                    alt={item.text}
-                    className='icon'
-                  />
-                  </button> 
-              </div>  
-            ) 
+            Icon.map(item => {
+              const {Logo} = item;
+              return <Logo fontSize="30px" color="grey" />
+            }) 
           }
         </div>
       </footer>

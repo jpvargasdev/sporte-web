@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from "prop-types";
-import IconHeader from '../../../images/twitter.png';
+// import PropTypes from "prop-types";
+import IosAmericanFootball from 'react-ionicons/lib/IosAmericanFootball'
 
 // Components
 import { Button } from 'antd';
@@ -34,10 +34,7 @@ const Header = ({
   return(
     <header>
       <div className="container">
-        <img
-          src={logo.url}
-          alt={logo.alt}
-        />
+      <IosAmericanFootball onClick={() => alert('Hi!')} fontSize="60px" color="#4cbbb9" />
         <nav>
           {
             navContent.map(item => 
@@ -52,17 +49,17 @@ const Header = ({
   )
 }
 
-Header.propTypes = {
-  logo: PropTypes.shape({
-    url: PropTypes.string,
-    alt: PropTypes.string
-  })
-};
-Header.defaultProps = {
-  logo: {
-    url: IconHeader,
-    alt: ""
-  }
-};
+// Header.propTypes = {
+//   logo: PropTypes.shape({
+//     url: PropTypes.string,
+//     alt: PropTypes.string
+//   })
+// };
+// Header.defaultProps = {
+//   logo: {
+//     url: IconHeader,
+//     alt: ""
+//   }
+// };
 
 export default Header;
