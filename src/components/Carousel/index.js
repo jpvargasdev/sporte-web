@@ -31,6 +31,14 @@ const CarouselComponent = ({ items }) => {
   );
 };
 
-CarouselComponent.propTypes = {};
+CarouselComponent.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      img: PropTypes.string,
+      title: PropTypes.string,
+      description: PropTypes.string,
+    }),
+  ),
+};
 
 export default CarouselComponent;

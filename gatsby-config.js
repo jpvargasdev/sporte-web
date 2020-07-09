@@ -4,9 +4,9 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `AnotherTodo`,
-    description: `Another Todo web app that uses Userbase.`,
-    author: `@gatsbyjs`,
+    title: `Sporte`,
+    description: `Sporte web app`,
+    author: `@jp-vargas`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -47,5 +47,13 @@ module.exports = {
       }
     },
     "gatsby-plugin-offline",
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `3m0ftrz3tm5b`,
+        accessToken: `0Qb6R-HSfkBheXBWWqw7yd9rZ4xYtXJM5HgGqYE0uqA`,
+        downloadLocal: true,
+      },
+    },
   ],
 }
