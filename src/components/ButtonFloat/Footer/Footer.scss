@@ -1,0 +1,43 @@
+footer {
+  background-color: Black;
+  height: 120px;
+  background: black;
+  width: 100%;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+
+  p {
+    color: white;
+    margin-top: 33px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+  }
+  .button_icon {
+    background-color: transparent;
+    float: left;
+    filter: grayscale(100%);
+    transition: .3s ease-in-out;
+    margin: 15px 5px;
+    width: 33px;
+
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+
+  .icon {
+    width: 19px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
