@@ -35,7 +35,7 @@ const Footer = ({
         <div className="container">
           {
             Icon.map(item => 
-              <div>
+              <div key={item.text}>
                 <button className='button_icon'>
                   <img 
                     src={item.url}

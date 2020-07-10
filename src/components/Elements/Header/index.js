@@ -41,7 +41,7 @@ const Header = ({
         <nav>
           {
             navContent.map(item => 
-              <div className="nav_button">
+              <div key={item.text} className="nav_button">
                 <Button {...item.props}>{item.text}</Button>
               </div>
             )

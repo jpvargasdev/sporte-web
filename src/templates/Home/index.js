@@ -1,55 +1,38 @@
 import React from "react";
 
-//Components 
+//Components
+import WidgetFabric from "../../components/Helpers/WidgetFabric";
 
-import ImageCard from '../../components/Elements/cards/ImageCard';
-import Grid from "../../components/Elements/widgets/Grid";
+function shapeContent(structure, cards) {
+  const { page } = structure;
+  const widgetsToRender = [];
+  page.forEach(({ widget }) => {
+    const data = [];
+    for (let i = 0; i < widget.items ; i++) {
+      if (cards.length > 0) {
+        data.push(cards.shift());
+      }
+    }
+    widgetsToRender.push({ type:widget.type, data:data });
+  });
 
+  return widgetsToRender;
+}
 
-const Home = () => (
-  <>
-    <div>
-      <Grid />
-    </div>
-    <div>
-
-    <h1>Contenido 1</h1>
-    <h2>Contenido 1</h2>
-    <h3>Contenido 1</h3>
-    <h1>Contenido 1</h1>
-    <h2>Contenido 1</h2>
-    <h3>Contenido 1</h3>
-    <h1>Contenido 1</h1>
-    <h2>Contenido 1</h2>
-    <h3>Contenido 1</h3>
-    <h1>Contenido 1</h1>
-    <h2>Contenido 1</h2>
-    <h3>Contenido 1</h3>
-    <h1>Contenido 1</h1>
-    <h2>Contenido 1</h2>
-    <h3>Contenido 1</h3>
-    <h3>Contenido 1</h3>
-    <h1>Contenido 1</h1>
-    <h2>Contenido 1</h2>
-    <h3>Contenido 1</h3>
-    <h3>Contenido 1</h3>
-    <h3>Contenido 1</h3>
-    <h1>Contenido 1</h1>
-    <h2>Contenido 1</h2>
-    <h3>Contenido 1</h3>
-    <h3>Contenido 1</h3>
-    <h3>Contenido 1</h3>
-    <h1>Contenido 1</h1>
-    <h2>Contenido 1</h2>
-    <h3>Contenido 1</h3>
-    <h3>Contenido 1</h3>
-    <h3>Contenido 1</h3>
-    <h1>Contenido 1</h1>
-    <h2>Contenido 1</h2>
-    <h3>Contenido 1</h3>
-    </div>
-    
-  </>
-);
+const Home = ({
+  structure,
+  totalCount,
+  cards,
+}) => {
+  console.log(cards);
+  const widgetsData = shapeContent(structure, cards);
+  return(
+    <>
+      {widgetsData.map((widgetData, index) => (
+        <WidgetFabric { ...widgetData } key={index}/>
+      ))}
+    </>
+  );
+};
 
 export default Home;

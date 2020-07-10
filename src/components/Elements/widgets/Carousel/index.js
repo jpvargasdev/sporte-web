@@ -15,18 +15,7 @@ const CarouselItem = ({ img, title, description }) => (
 const CarouselComponent = ({ items }) => {
   return (
     <section>
-      <Carousel autoplay>
-        {
-          items.map(
-            item => (
-              <CarouselItem
-                img={item.img}
-                title={item.title}
-                description={item.description}
-              />
-            )
-          )}
-      </Carousel>
+      <h1>Hola Juan</h1>
     </section>
   );
 };

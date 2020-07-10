@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import './ButtonFloat.scss';
 import PropTypes from 'prop-types';
 import Arrow from '../../../images/arrow.png';
@@ -34,4 +34,4 @@ ButtonFloat.defaultProps = {
   }
 }
 
-export default ButtonFloat;
+export default memo(ButtonFloat);
