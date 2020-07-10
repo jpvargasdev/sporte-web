@@ -1,0 +1,39 @@
+.content_carousel {
+
+}
+
+.carousel_img {
+  width: 738px;
+  height: 491px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 7px;
+}
+
+.carousel_info{
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(32, 32, 32, 0.486);
+  transition: top 500ms;
+  color: white;
+  top: 23vw;
+  overflow: hidden;
+  height: 10.4vw;
+  width: 8.4%;
+  margin-left: 121px;
+  margin-right: 120px;
+}
+
+.carousel_title {
+ color:blue;
+ text-align: center;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+.carousel_p {
+  color: green;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}

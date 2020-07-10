@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Title from '../../../Base/Title'
 import './Grid.scss';
 import ImageCard from '../../cards/ImageCard';
 
 const ListCard = [
   {
     img: {
-      src:"http://lorempixel.com/g/300/200",
+      src:"http://lorempixel.com/g/300/300",
       alt:"example",
     },
     meta:{
@@ -17,7 +18,7 @@ const ListCard = [
   },
   {
     img: {
-      src:"http://lorempixel.com/g/300/200",
+      src:"http://lorempixel.com/g/300/300",
       alt:"example",
     },
     meta:{
@@ -27,7 +28,7 @@ const ListCard = [
   },
   {
     img: {
-      src:"http://lorempixel.com/g/300/200",
+      src:"http://lorempixel.com/g/300/300",
       alt:"example",
     },
     meta:{
@@ -37,7 +38,7 @@ const ListCard = [
   },
   {
     img: {
-      src:"http://lorempixel.com/g/300/200",
+      src:"http://lorempixel.com/g/300/300",
       alt:"example",
     },
     meta:{
@@ -47,7 +48,7 @@ const ListCard = [
   },
   {
     img: {
-      src:"http://lorempixel.com/g/300/200",
+      src:"http://lorempixel.com/g/300/300",
       alt:"example",
     },
     meta:{
@@ -57,7 +58,7 @@ const ListCard = [
   },
   {
     img: {
-      src:"http://lorempixel.com/g/300/200",
+      src:"http://lorempixel.com/g/300/300",
       alt:"example",
     },
     meta:{
@@ -71,15 +72,18 @@ const Grid = ({
   cards
 }) => {
   return(
-    <section className='container_grid'>
-      {
-        cards.map((card, index) => 
-          <div key={index} className='List_card'>
-            <ImageCard {...card} />
-          </div>
-        )
-      }
-    </section>
+    <>
+      <Title text={'Tarjetas'} />
+      <section className='container_grid'>
+        {
+          ListCard.map(card => 
+          <div className='List_card'>
+            <Card {...card} />
+          </div> 
+          )
+        }
+      </section>
+    </>
   )
 } 
 
