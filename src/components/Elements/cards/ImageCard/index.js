@@ -47,7 +47,7 @@ ImageCard.defaultProps = {
   bannerImage: {
     title: "test",
     file: {
-      url: "test",
+      url: "testel c",
     },
   },
 }
