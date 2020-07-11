@@ -1,10 +1,10 @@
-.List_card {
-margin: 3px;
-}
+
 .container_grid {
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
 }
