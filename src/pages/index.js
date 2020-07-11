@@ -34,10 +34,9 @@ export const query = graphql`
       structure {
         id
         page {
-          carousel {
-            items
-          }
-          grid {
+          widget {
+            title
+            type
             items
           }
         }
@@ -53,11 +52,16 @@ const HomePage = ({ data }) => {
     structure
   } = data.contentfulPage;
 
+  const {
+    totalCount,
+    nodes,
+  } = data.allContentfulArticle;
+
   return (
     <>
-      <Seo />
+      <Seo title={seoTitle} description={description}/>
       <Layout>
-        <Home />
+        <Home structure={structure} totalCount={totalCount} cards={nodes} />
       </Layout>
     </>
   );

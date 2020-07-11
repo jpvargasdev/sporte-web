@@ -34,11 +34,11 @@ const Header = ({
   return(
     <header>
       <div className="container">
-      <IosAmericanFootball onClick={() => alert('Hi!')} fontSize="60px" color="#4cbbb9" />
+      <IosAmericanFootball onClick={() => alert('Hi!')} fontSize="60px" color="#3b9bec" />
         <nav>
           {
             navContent.map(item => 
-              <div className="nav_button">
+              <div key={item.text} className="nav_button">
                 <Button {...item.props}>{item.text}</Button>
               </div>
             )

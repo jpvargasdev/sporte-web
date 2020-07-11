@@ -29,8 +29,8 @@ const Footer = ({
         <div className="container">
           {
             Icon.map(item => {
-              const {Logo} = item;
-              return <Logo fontSize="30px" color="grey" />
+              const { Logo } = item;
+              return <Logo key={item.text} fontSize="30px" color="grey" />
             }) 
           }
         </div>

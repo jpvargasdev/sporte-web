@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import './ButtonFloat.scss';
 // import PropTypes from 'prop-types';
 
@@ -31,4 +31,4 @@ const ButtonFloat = ({
 //   }
 // }
 
-export default ButtonFloat;
+export default memo(ButtonFloat);

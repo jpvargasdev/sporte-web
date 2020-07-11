@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './Grid.scss';
-import Card from '../../cards/ImageCard';
+import ImageCard from '../../cards/ImageCard';
 
 const ListCard = [
   {
@@ -73,10 +73,10 @@ const Grid = ({
   return(
     <section className='container_grid'>
       {
-        ListCard.map(card => 
-        <div className='List_card'>
-          <Card {...card} />
-        </div> 
+        cards.map((card, index) => 
+          <div key={index} className='List_card'>
+            <ImageCard {...card} />
+          </div>
         )
       }
     </section>

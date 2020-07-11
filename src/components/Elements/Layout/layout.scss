@@ -1,7 +1,6 @@
 @import "../../../styles/settings";
 
 main {
-  background-color: red;
   width: 100%;
   padding-right: 20px;
   padding-left: 20px;
@@ -15,9 +14,9 @@ main {
     width: 100%;
   }
   @include respond-to("medium") {
-    width: 80%;
+    width: 50%;
   }
   @include respond-to("large") {
-    width: 70%;
+    width: 60%;
   }
 }

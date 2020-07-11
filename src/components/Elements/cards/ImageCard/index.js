@@ -9,46 +9,47 @@ import './ImageCard.scss';
 const { Meta } = Card;
 
 const ImageCard = ({
-  img,
-  meta,
+  title,
+  description,
+  bannerImage,
 }) => {
   return(
     <Card
       hoverable
       style={{ width: 240, margin: 10, boxShadow: 'green', }}
       cover={
-        <img {...img}/>
+        <img alt={bannerImage.title} src={bannerImage.file.url} />
       }>
-      <Meta {...meta} />
+      <Meta title={title} description={description} />
       <div className='button'>
         <Button type="primary" shape="circle">
           ir
         </Button>
       </div>
     </Card>
-  )
-}
+  );
+};
 
 ImageCard.propTypes = {
-  img: PropTypes.shape({
-    src: PropTypes.string,
-    alt: PropTypes.string,
-  }),
-  meta: PropTypes.shape({
+  title: PropTypes.string,
+  description: PropTypes.string,
+  bannerImage: PropTypes.shape({
     title: PropTypes.string,
-    description: PropTypes.string,
-  })
+    file: PropTypes.shape({
+    url: PropTypes.string,
+    }),
+  }),
 };
 
 ImageCard.defaultProps = {
-  img: {
-    src:"http://lorempixel.com/g/300/200",
-    alt:"example",
+  title: "test",
+  description: "test",
+  bannerImage: {
+    title: "test",
+    file: {
+      url: "test",
+    },
   },
-  meta:{
-    title:"Europe Street beat",
-    description:" description ",
-  }
 }
 
 export default ImageCard;
