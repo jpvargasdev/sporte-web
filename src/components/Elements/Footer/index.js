@@ -30,7 +30,7 @@ const Footer = ({
           {
             Icon.map(item => {
               const { Logo } = item;
-              return <Logo key={item.text} fontSize="30px" color="grey" />
+              return <Logo key={item.text} className='icon' fontSize="30px" color="grey" />
             }) 
           }
         </div>
@@ -43,7 +43,7 @@ Footer.propTypes = {
   title: PropTypes.string,
 };
 Footer.defaultProps = {
-  title: "Terminos y Condiciones "
+  title: "Copyright. © 2020. Sporte. Todos Los Derechos Reservados."
 }
 
 export default Footer;

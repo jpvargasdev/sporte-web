@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Button } from 'antd';
+import { Card} from 'antd';
+import Following from "../../../Base/Following";
 
 //style
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
@@ -21,11 +22,7 @@ const ImageCard = ({
         <img alt={bannerImage.title} src={bannerImage.file.url} />
       }>
       <Meta title={title} description={description} />
-      <div className='button'>
-        <Button type="primary" shape="circle">
-          ir
-        </Button>
-      </div>
+      <Following />
     </Card>
   );
 };
