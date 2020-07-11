@@ -6,54 +6,19 @@ import "./carousel.scss";
 
 const { Meta } = Card;
 
-
-
 // components
 import { Carousel } from 'antd';
 
-const Items = [
-  {
-    img: {
-      url: 'http://lorempixel.com/output/sports-q-c-738-491-1.jpg',
-      alt: 'img',
-    },
-    title: 'Hello',
-    description: 'hello wor',
-  },
-  {
-    img: {
-      url: 'http://lorempixel.com/output/sports-q-c-738-491-5.jpg',
-      alt: 'img',
-    },
-    title: 'Hello',
-    description: 'hello wor',
-  },
-  {
-    img: {
-      url: 'http://lorempixel.com/output/sports-q-c-738-491-5.jpg',
-      alt: 'img',
-    },
-    title: 'Hello',
-    description: 'hello wor',
-  },
-  {
-    img: {
-      url: 'http://lorempixel.com/output/sports-q-c-738-491-5.jpg',
-      alt: 'img',
-    },
-    title: 'Hello',
-    description: 'hello wor hello wor hello wor hello wor hello wor hello wor',
-  }
-]
 
-const CarouselItem = ({ img, title, description }) => (
+const CarouselItem = ({ img, title, description, linkHandler }) => (
   <div className="content_carousel">
       <Card
+        onClick={linkHandler}
         hoverable
         style={{ width: 650 }}
         cover={
           <div className='divImage'>
-            <img className='carousel_img ' alt={img.alt} src={img.url} />
+            <img className='carousel_img ' alt={img.file.title} src={img.file.url} />
           </div>
          }
       >
@@ -62,16 +27,18 @@ const CarouselItem = ({ img, title, description }) => (
   </div>
 );
 
-const CarouselComponent = () => {
+const CarouselComponent = ({ cards }) => {
   return (
     <Carousel autoplay>
       {
-        Items.map(
-          item => (
+        cards.map(
+          card => (
             <CarouselItem
-              img={item.img}
-              title={item.title}
-              description={item.description}
+              img={card.bannerImage}
+              title={card.title}
+              key={card.id}
+              description={card.description}
+              linkHandler={card.linkHandler}
             />
           )
         )}

@@ -1,41 +1,37 @@
 import React from 'react';
-import './AboutCard.scss';
 import PropTypes from 'prop-types';
-import "../../Header/node_modules/antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import { Card, Avatar } from 'antd';
+
+import './AuthorCard.scss';
+import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 
 const { Meta } = Card;
 
-const AboutCard = ({
-  card,
-}) => {
+const AuthorCard = ({ data }) => {
   return (
     <Card style={{ width: 300, marginTop: 16 }}>
     <Meta
       avatar={
-        <Avatar src={card.url}/>
+        <Avatar size="large" src={data.profileImage.file.url}/>
       }
-      title={card.title}
-      description={card.description}
+      title={data.name}
+      description={data.description}
     />
     </Card>
-  )
+  );
 }
 
-AboutCard.propTypes = {
-  card: PropTypes.shape({
-    url: PropTypes.string,
-    title: PropTypes.string,
+AuthorCard.propTypes = {
+  data: PropTypes.shape({
+    profileImage: PropTypes.shape({
+      file: PropTypes.shape({
+        url: PropTypes.string,
+      }),
+    }),
+    name: PropTypes.string,
     description: PropTypes.string,
   })
 };
 
-AboutCard.defaultProps = {
-  card: {
-    url: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
-    title: "Card title",
-    description: "This is the description This is the description This is the description",
-  }
-};
 
-export default AboutCard;
+export default AuthorCard;

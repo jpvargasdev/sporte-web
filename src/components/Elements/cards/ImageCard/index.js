@@ -12,9 +12,11 @@ const ImageCard = ({
   title,
   description,
   bannerImage,
+  linkHandler
 }) => {
   return(
     <Card
+      onClick={linkHandler}
       hoverable
       style={{ width: 240, margin: 10, boxShadow: 'green', }}
       cover={
@@ -39,6 +41,7 @@ ImageCard.propTypes = {
     url: PropTypes.string,
     }),
   }),
+  linkHandler: PropTypes.func,
 };
 
 ImageCard.defaultProps = {

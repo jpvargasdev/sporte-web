@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 
 // components
 import { ImageCard, AuthorCard } from "../Elements/cards";
@@ -8,8 +8,10 @@ const cardsMap = {
 };
 
 const CardFabric = ({type, data}) => {
-  const Card = card[type];
-  return <Card {...data} />
+  const Card = cardsMap[type];
+  return (
+    <Card {...data} />
+  );
 };
 
-export default memo(CardFabric);
+export default CardFabric;

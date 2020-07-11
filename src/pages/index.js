@@ -20,11 +20,13 @@ export const query = graphql`
       nodes {
         title
         description
+        id
         bannerImage {
           title
           file {
             url
           }
+          id
         }
       }
     },
@@ -32,12 +34,11 @@ export const query = graphql`
       description
       seoTitle
       structure {
-        id
         page {
           widget {
-            title
-            type
             items
+            type
+            title
           }
         }
       }
