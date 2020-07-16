@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Card } from 'antd';
+import { Card} from 'antd';
 import "antd/dist/antd.css";
 import "./carousel.scss";
+import Following from "../../../Base/Following";
 
 const { Meta } = Card;
 
@@ -23,6 +24,7 @@ const CarouselItem = ({ img, title, description, linkHandler }) => (
          }
       >
         <Meta title={title} description={description} />
+        <Following />
       </Card>
   </div>
 );
