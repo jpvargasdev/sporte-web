@@ -14,9 +14,9 @@ main {
     width: 100%;
   }
   @include respond-to("medium") {
-    width: 50%;
+    width: 80%;
   }
   @include respond-to("large") {
-    width: 60%;
+    width: 70%;
   }
 }

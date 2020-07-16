@@ -3,11 +3,13 @@ import React from "react";
 // components
 import Grid from "../Elements/widgets/Grid";
 import Carousel from "../Elements/widgets/Carousel";
+import PublicityBanner from "../Base/PublicityBanner";
 import Title from "../Base/Title";
 
 const widgetMap = {
   grid: Grid,
   carousel: Carousel,
+  publicityBanner: PublicityBanner,
 };
 
 const WidgetFabric = ({type, data, title}) => {
@@ -15,7 +17,7 @@ const WidgetFabric = ({type, data, title}) => {
   return (
     <>
       <section>
-      <Title text='Tarjetas'/>
+      { title && <Title text={title}/> }
         <Widget cards={data} />
       </section>
     </>

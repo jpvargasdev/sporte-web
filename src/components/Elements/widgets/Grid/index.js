@@ -4,69 +4,6 @@ import PropTypes from 'prop-types';
 import './Grid.scss';
 import ImageCard from '../../cards/ImageCard';
 
-const ListCard = [
-  {
-    img: {
-      src:"http://lorempixel.com/g/300/200",
-      alt:"example",
-    },
-    meta:{
-      title:"Europe Street beat",
-      description:" description ",
-    }
-  },
-  {
-    img: {
-      src:"http://lorempixel.com/g/300/200",
-      alt:"example",
-    },
-    meta:{
-      title:"Europe Street beat",
-      description:" description ",
-    }
-  },
-  {
-    img: {
-      src:"http://lorempixel.com/g/300/200",
-      alt:"example",
-    },
-    meta:{
-      title:"Europe Street beat",
-      description:" description ",
-    }
-  },
-  {
-    img: {
-      src:"http://lorempixel.com/g/300/200",
-      alt:"example",
-    },
-    meta:{
-      title:"Europe Street beat",
-      description:" description ",
-    }
-  },
-  {
-    img: {
-      src:"http://lorempixel.com/g/300/200",
-      alt:"example",
-    },
-    meta:{
-      title:"Europe Street beat",
-      description:" description ",
-    }
-  },
-  {
-    img: {
-      src:"http://lorempixel.com/g/300/200",
-      alt:"example",
-    },
-    meta:{
-      title:"Europe Street beat",
-      description:" description ",
-    }
-    },         
-]
-
 const Grid = ({
   cards
 }) => {

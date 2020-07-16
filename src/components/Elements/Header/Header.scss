@@ -34,10 +34,10 @@ header {
       width: 100%;
     }
     @include respond-to("medium") {
-      width: 80%;
+      width: 50%;
     }
     @include respond-to("large") {
-      width: 70%;
+      width: 60%;
     }
 
     nav {
