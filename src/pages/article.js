@@ -62,11 +62,13 @@ const ArticlePage = ({ data, location }) => {
 
   const articleId = search.split("=")[1];
   const article = nodes.filter(article => article.id === articleId);
+  if (!article.length) return null;
+  const { title } = article[0].title
 
   if (Array.isArray(article) && article.length > 0) {
     return (
       <>
-        <Seo title={article[0].title} description={description}/>
+        <Seo title={title} description={description}/>
         <Layout>
           <Article data={article && article[0]} />
         </Layout>
