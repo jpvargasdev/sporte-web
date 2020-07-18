@@ -5,9 +5,9 @@ import TarjetContact from '../../components/Elements/TarjetContact'
 
 const Contact = () => {
   return(
-    <div style={{height: '74.6vh', overflow: 'hidden'}}>
+    <section style={{height: '74.6vh', overflow: 'hidden'}}>
       <TarjetContact />
-    </div>
+    </section>
   )
 }
 

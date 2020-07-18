@@ -1,0 +1,50 @@
+@import "../../styles/settings";
+
+.contentText_About {
+  width: 100%;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin: 100px auto;
+
+  @include respond-to("mobile") {
+    width: 100%;
+  }
+  @include respond-to("small") {
+    width: 100%;
+  }
+  @include respond-to("medium") {
+    width: 75%;
+    margin-left: 0;
+  }
+  @include respond-to("large") {
+    width: 56%;
+    margin: 0px auto;
+  }
+
+  //
+
+  .content_About {
+    margin: 76px 0;
+  }
+
+
+  h1 {
+    margin: 36px 0;
+    text-align: center;
+    font-size: 37px;
+  }
+
+  p {
+    font-size: 18px;
+    color: #525252;
+    margin: 25px 0;
+  }
+
+  h3 {
+    font-size: 19px;
+    letter-spacing: 1px;
+    color: #000;
+    font-weight: bold;
+  }
+  
+}

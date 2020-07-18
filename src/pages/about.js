@@ -8,34 +8,38 @@ import Layout from "../components/Elements/Layout";
 import Seo from "../components/Base/Seo";
 
 // templates
-import Contact from '../templates/Contact'
+import About from '../templates/About';
 
 // styles
 import '../styles/index.scss';
 
 export const query = graphql`
   {
-    contentfulPage(title: {eq: "Contact"}) {
+    contentfulPage(title: { eq: "About" }) {
       description
       seoTitle
+      content {
+        json
+      }
     }
   }
 `;
 
-const ContactPage = ({ data }) => {
+const AboutPage = ({ data }) => {
   const {
     description,
     seoTitle,
+    content
   } = data.contentfulPage;
 
   return (
     <>
       <Seo title={seoTitle} description={description}/>
       <Layout>
-        <Contact />
+        <About content={content} />
       </Layout>
     </>
   );
 };
 
-export default ContactPage;
+export default AboutPage;

@@ -1,54 +1,56 @@
 import React from 'react';
 // import PropTypes from "prop-types";
 import IosAmericanFootball from 'react-ionicons/lib/IosAmericanFootball'
-
+ 
 // Components
 import { Button } from 'antd';
-
+ 
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
 import './Header.scss';
-
+import { Link } from "gatsby"
+ 
 const buttonType = "default";
-const buttonShape = "round";
-
+ 
 const navContent = [
-  {
-    text: "Sobre nosotros",
-    props: {
-      type: buttonType,
-      shape: buttonShape
-    }
-  },
-  {
-    text: "Contacto",
-    props: {
-      type: buttonType,
-      shape: buttonShape
-    }
-  },
+ {
+   text: "Sobre nosotros",
+   link: "/about/",
+   props: {
+     type: buttonType,
+   }
+ },
+ {
+   text: "Contacto",
+   link: "/contact/",
+   props: {
+     type: buttonType,
+   }
+ },
 ];
-
-const Header = ({
-  logo,
-}) => {
-  return(
-    <header>
-      <div className="container">
-      <IosAmericanFootball onClick={() => alert('Hi!')} fontSize="60px" color="#3b9bec" />
-        <nav>
-          {
-            navContent.map(item => 
-              <div key={item.text} className="nav_button">
-                <Button {...item.props}>{item.text}</Button>
-              </div>
-            )
-          }
-        </nav>
-      </div>
-    </header>  
-  )
+ 
+const Header = () => {
+ return(
+   <header>
+     <div className="container">
+        <Link to='/'>
+          <IosAmericanFootball  fontSize="60px" color="#3b9bec" />
+        </Link >
+       <nav>
+         {
+           navContent.map(item =>
+             <div key={item.text} className="nav_button">
+               <Link to={item.link}>
+                 <Button shape="round" {...item.props}>{item.text}</Button>
+               </Link>
+             </div>
+           )
+         }
+       </nav>
+     </div>
+   </header> 
+ )
 }
-
+ 
 // Header.propTypes = {
 //   logo: PropTypes.shape({
 //     url: PropTypes.string,
@@ -61,5 +63,6 @@ const Header = ({
 //     alt: ""
 //   }
 // };
-
+ 
 export default Header;
+
