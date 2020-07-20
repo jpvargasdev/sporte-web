@@ -2,12 +2,12 @@ import React from 'react';
 import './Contact.scss'
 
 //components
-import TarjetContact from '../../components/Elements/TarjetContact'
+import ContactBanner from '../../components/Elements/ContactBanner'
 
 const Contact = () => {
   return(
     <section className='content_tarjet'>
-      <TarjetContact />
+      <ContactBanner />
     </section>
   )
 }
