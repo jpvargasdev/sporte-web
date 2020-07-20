@@ -7,10 +7,11 @@ footer {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0;
+  overflow: hidden;
 
   p {
     color: #dbdbdb;
-    margin-top: 38px;
+    margin: 38px 38px 0;
     display: flex;
     justify-content: center;
   }
@@ -18,9 +19,12 @@ footer {
   .container {
     display: flex;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
+    margin: 10px auto;
+   
+
+    @media screen and (max-width: 530px) {
+      margin: 6px auto;
+    }
   }
 
   .icon {

@@ -9,6 +9,7 @@ main {
 
   @include respond-to("mobile") {
     width: 100%;
+    overflow-x: hidden;
   }
   @include respond-to("small") {
     width: 100%;
