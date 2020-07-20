@@ -1,7 +1,7 @@
 import React from "react";
 
 // api
-import { StaticQuery, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 // components
 import Layout from "../components/Elements/Layout";

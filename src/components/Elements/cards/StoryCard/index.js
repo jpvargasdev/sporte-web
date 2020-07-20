@@ -6,7 +6,7 @@ import IosArrowForward from 'react-ionicons/lib/IosArrowForward';
 
 
 //style
-import './CardHeight.scss'
+import './storyCard.scss'
 
 //Components
 
@@ -20,7 +20,7 @@ const FollowingWhite = () => {
   )
 }
 
-const CardHeight = ({
+const StoryCard = ({
   bannerImage,
   title,
   linkHandler
@@ -37,7 +37,7 @@ const CardHeight = ({
   )
 }
 
-CardHeight.propTypes = {
+StoryCard.propTypes = {
   title: PropTypes.string,
   bannerImage: PropTypes.shape({
     title: PropTypes.string,
@@ -48,7 +48,7 @@ CardHeight.propTypes = {
   linkHandler: PropTypes.func,
 }
 
-CardHeight.defaultProps= {
+StoryCard.defaultProps= {
   title: "test",
   bannerImage: {
     title: "test",
@@ -58,4 +58,4 @@ CardHeight.defaultProps= {
   },
 }
 
-export default CardHeight; 
+export default StoryCard; 

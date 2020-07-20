@@ -30,7 +30,7 @@ const Icons = [
   },
 ]
 
-const TarjetContact = () => {
+const ContactBanner = () => {
   return(
     <form>
       <div className='Tarjet1'>
@@ -68,4 +68,4 @@ const TarjetContact = () => {
   )
 }
 
-export default TarjetContact;
+export default ContactBanner;
