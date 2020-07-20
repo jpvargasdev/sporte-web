@@ -1,5 +1,5 @@
 import React from 'react';
-import './ContactBanner.scss';
+import './contactBanner.scss';
 import { Input } from 'antd';
 import { Button } from 'antd';
 import { UserOutlined, MailOutlined, MessageOutlined } from '@ant-design/icons';
