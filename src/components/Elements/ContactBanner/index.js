@@ -1,5 +1,5 @@
 import React from 'react';
-import './TarjetContact.scss';
+import './ContactBanner.scss';
 import { Input } from 'antd';
 import { Button } from 'antd';
 import { UserOutlined, MailOutlined, MessageOutlined } from '@ant-design/icons';
