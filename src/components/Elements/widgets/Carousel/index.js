@@ -16,7 +16,7 @@ const CarouselItem = ({ img, title, description, linkHandler }) => (
       <Card
         onClick={linkHandler}
         hoverable
-        style={{ width: 665 }}
+        style={{ width: 665, borderRadius:5 }}
         cover={
           <div className='divImage'>
             <img className='carousel_img ' alt={img.file.title} src={img.file.url} />

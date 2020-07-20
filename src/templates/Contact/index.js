@@ -1,11 +1,12 @@
 import React from 'react';
+import './Contact.scss'
 
 //components
 import TarjetContact from '../../components/Elements/TarjetContact'
 
 const Contact = () => {
   return(
-    <section style={{height: '74.6vh', overflow: 'hidden'}}>
+    <section className='content_tarjet'>
       <TarjetContact />
     </section>
   )
