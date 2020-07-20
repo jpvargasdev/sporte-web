@@ -29,7 +29,7 @@ const ImageIcon = [
 
 const AuthorCard = ({ data }) => {
   return (
-    <Card style={{ width: '100%', marginTop: 16 }}>
+    <Card style={{ width: '100%', marginTop: 16, borderRadius:5, }}>
     <Meta
       avatar={
         <div className='content_avatar'>
