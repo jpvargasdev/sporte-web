@@ -1,24 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'antd';
 import "antd/dist/antd.css";
-import IosArrowForward from 'react-ionicons/lib/IosArrowForward';
 
 
 //style
 import './storyCard.scss'
 
 //Components
-
-
-const FollowingWhite = () => {
-  return(
-    <Button type="link" shape="circle">
-      <p className='text'>LEER MÁS</p>
-      <IosArrowForward onClick={() => alert('Hi!')} className='logo' fontSize="15px" color="#fff" />
-  </Button>
-  )
-}
+import Following from '../../../Base/Following'
 
 const StoryCard = ({
   bannerImage,
@@ -31,7 +20,7 @@ const StoryCard = ({
         <img className='image' src={bannerImage.file.url} alt={bannerImage.title} />
         <div className='card__title' >
           <h3>{title}</h3>
-          <FollowingWhite />
+          <Following props='white' />
         </div>
       </div>
   )
