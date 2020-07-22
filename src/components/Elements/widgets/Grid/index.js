@@ -14,7 +14,7 @@ const Grid = ({
       {
         cards.map((card, index) => 
           <div key={index} className='List_card'>
-            <CardWidth  {...card} />
+            <CardHeight   {...card} />
           </div>
         )
       }

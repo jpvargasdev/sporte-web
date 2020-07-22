@@ -24,7 +24,7 @@ const ImageCard = ({
         <img alt={bannerImage.title} src={bannerImage.file.url} />
       }>
       <Meta title={title} description={description} />
-      <Following />
+      <Following props='white' />
     </Card>
   );
 };
