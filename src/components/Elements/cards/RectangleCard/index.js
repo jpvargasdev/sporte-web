@@ -7,15 +7,8 @@ import IosArrowForward from 'react-ionicons/lib/IosArrowForward';
 //style
 import './CardWidth.scss'
 
-const FollowingWhite = () => {
-  return(
-    <Button type="link" shape="circle">
-      <p className='text'>LEER MÁS</p>
-      <IosArrowForward onClick={() => alert('Hi!')} className='logo' fontSize="15px" color="#fff" />
-  </Button>
-  )
-}
-
+//component
+import Following from '../../../Base/Following'
 
 const CardWidth = ({
   bannerImage,
@@ -28,7 +21,7 @@ const CardWidth = ({
         <img className='image' src={bannerImage.file.url} alt={bannerImage.title} />
         <div className='card__title' >
           <h3>{title}</h3>
-          <FollowingWhite />
+          <Following props='white' />
         </div>
       </div>
   )
