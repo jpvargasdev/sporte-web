@@ -24,7 +24,7 @@ const Article = ({ data }) => {
             <h1>{data.title}</h1>
             <p>{data.description}</p>
             <div className='content_img'>
-              <img className='image' src={data.bannerImage.file.url} alt={data.bannerImage.file.title}/>
+              <img className='image_article' src={data.bannerImage.file.url} alt={data.bannerImage.file.title}/>
             </div>
             <div className='contentText'>
               {ContentText}
