@@ -15,6 +15,7 @@
     "@storybook/addon-docs": "^5.3.19",
     "@storybook/react": "^5.3.19",
     "antd": "^4.4.0",
+    "aos": "^2.3.4",
     "babel-loader": "^8.1.0",
     "babel-plugin-react-docgen": "^4.1.0",
     "babel-plugin-remove-graphql-queries": "^2.9.12",
@@ -49,7 +50,8 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "develop:graphql": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",

@@ -1,10 +1,19 @@
 import React from "react";
 
 // components
-import { ImageCard, AuthorCard } from "../Elements/cards";
+import {
+  ImageCard,
+  AuthorCard,
+  RectangleCard,
+  StoryCard,
+} from "../Elements/cards";
+
+// constants
 const cardsMap = {
   imageCard: ImageCard,
   authorCard: AuthorCard,
+  rectangleCard: RectangleCard,
+  storyCard: StoryCard,
 };
 
 const CardFabric = ({type, data}) => {

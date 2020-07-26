@@ -1,0 +1,23 @@
+.recomendation {
+  margin: 25px 8px 0px;
+  width: 297px;    
+  
+  .recoment_img {
+    width: 100%;
+    height: 210px;
+    border-radius: 2px;
+    object-fit: cover;
+
+    @media screen and (max-width: 650px) {
+      float: none;
+      margin-right: 0;
+      width: 379px;
+      height: 218px;
+    }
+  }
+  
+  .recoment_p {
+    margin: 10px 0;
+  }
+}
+  

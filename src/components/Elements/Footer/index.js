@@ -10,11 +10,13 @@ import LogoFacebook from 'react-ionicons/lib/LogoFacebook';
 const Icon = [
   {
     Logo: LogoFacebook,
-    text:'facebook'
+    text:'facebook',
+    url: 'https://www.facebook.com/Ju4np44'
   },
   {
     Logo: LogoInstagram,
-    text:'instagram'
+    text:'instagram',
+    url: 'https://www.instagram.com/iclown_/'
   },
 ];
 
@@ -30,7 +32,11 @@ const Footer = ({
           {
             Icon.map(item => {
               const { Logo } = item;
-              return <Logo key={item.text} className='icon' fontSize="30px" color="grey" />
+              return (
+                <a href={item.url}>
+                  <Logo key={item.text} className='icon' fontSize="30px" color="grey" />
+                </a>
+              )
             }) 
           }
         </div>

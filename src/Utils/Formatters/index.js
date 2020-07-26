@@ -1,8 +1,11 @@
 import { navigate } from "gatsby";
 
-// components
-import PublicityBanner from "../../components/Base/PublicityBanner";
 
+/**
+ * Inject the link to redirect to desired page
+ * @param {Object} card - Card
+ * @returns {Object}
+ */
 export function injectLinkHandler(card) {
   const linkHandler = () => navigate(
     `/article?id=${card.id}`,
@@ -14,6 +17,11 @@ export function injectLinkHandler(card) {
   return card;
 }
 
+/**
+ * Create widgets structure to render
+ * @param {Object} structure 
+ * @param {Array} cards 
+ */
 export function shapeContent(structure, cards) {
   const { page } = structure;
   const widgetsToRender = [];
