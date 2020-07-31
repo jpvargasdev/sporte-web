@@ -2,6 +2,7 @@ import React from 'react';
 
 //components
 import Following from "../../../Base/Following";
+import Share from '../../../Base/Share';
 
 //style
 import './carrouselCard.scss'
@@ -14,6 +15,7 @@ const CarrouselCard = ({ img, title, linkHandler }) => {
         <div className='card__title' >
           <h3>{title}</h3>
           <Following props='white'/>
+          <Share color='black'/>
         </div>
       </div>
   </div>

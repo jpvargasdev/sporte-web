@@ -72,6 +72,12 @@
   hr {
     color: red;
   }
+
+  .article_share {
+    display: flex;
+    justify-content: flex-end;
+    position: none;  
+  }
 }
   .recomendation_article {
     margin: 100px 0;

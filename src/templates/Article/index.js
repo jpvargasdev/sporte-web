@@ -8,6 +8,7 @@ import renderRichText from "../../components/Base/RichText";
 import AuthorCard from "../../components/Elements/cards/AuthorCard";
 import PublicityBanner, { BANNER_SIZE } from "../../components/Base/PublicityBanner";
 import WidgetFabric from "../../components/Helpers/WidgetFabric";
+import Share from '../../components/Base/Share';
 
 const Article = ({ data, structure }) => {
   const ContentText = renderRichText(data.content.json);
@@ -20,10 +21,12 @@ const Article = ({ data, structure }) => {
         <div className="article article_banner_container">
           <PublicityBanner className="article article_banner" type={BANNER_SIZE.PORTRAIT} />
         </div>
-
         <article className="article article_content">
           <h1>{data.title}</h1>
           <p>{data.description}</p>
+          <div >
+            <Share colorButton="primary" color="white" />
+          </div>
           <div className="content_img">
             <img className="image_article" src={data.bannerImage.file.url} alt={data.bannerImage.file.title}/>
           </div>
@@ -31,6 +34,7 @@ const Article = ({ data, structure }) => {
             {ContentText}
           </div>
           <AuthorCard data={data.author} />
+        
         </article>
 
         <div className="article article_banner_container">

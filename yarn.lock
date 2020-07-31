@@ -8361,6 +8361,11 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
+gimp@0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.yarnpkg.com/gimp/-/gimp-0.0.1-security.tgz#3e48872b6ea8428900e27dd9a93567381dae5d9a"
+  integrity sha512-5eB8/nPAS9GA2vm2wiNBJx7QPke8QkqiPSUrog0CrO5vJSuXZlTRwTuLRsB+hhm6VREaURzhhoU/PYH0yoDAdw==
+
 git-up@4.0.1:
   version "4.0.1"
   resolved "https://registry.npmjs.org/git-up/-/git-up-4.0.1.tgz#cb2ef086653640e721d2042fe3104857d89007c0"

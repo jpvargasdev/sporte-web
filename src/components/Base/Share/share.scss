@@ -1,0 +1,20 @@
+.content_share {
+  margin: 8px 29px;
+
+  @media screen and (max-width: 620px) {
+    display: none;
+  }
+}
+
+.span {
+  opacity: 1;
+  transition: 0.5s;
+  margin: 4px auto;
+  display: flex;
+  justify-content: flex-end;
+ 
+}
+
+.span_button {
+  margin: 4px 7px;
+}
