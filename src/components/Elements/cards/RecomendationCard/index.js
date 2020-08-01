@@ -9,9 +9,10 @@ import './recomendationCard.scss';
 const RecomendationCard = ({
   bannerImage,
   title,
+  linkHandler,
 }) => {
   return(
-    <div className="recomendation">
+    <div onClick={linkHandler} className="recomendation">
       <img className=" recoment_img" src={bannerImage.file.url} alt={bannerImage.title}/>
       <div className=" recoment_p">
         <h6>{title}</h6>
