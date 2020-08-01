@@ -5,7 +5,7 @@ import { Card, Avatar } from 'antd';
 //icons
 import LogoFacebook from 'react-ionicons/lib/LogoFacebook'
 import LogoInstagram from 'react-ionicons/lib/LogoInstagram'
-import LogoLinkedin from 'react-ionicons/lib/LogoLinkedin'
+import LogoTwitter from 'react-ionicons/lib/LogoTwitter'
 
 import './AuthorCard.scss';
 import "antd/dist/antd.css"; // or 'antd/dist/antd.less'
@@ -22,7 +22,7 @@ const ImageIcon = [
     text: 'instagramUrl',
   },
   {
-    Icons: LogoLinkedin,
+    Icons: LogoTwitter,
     text: 'twitterUrl',
   },
 ]
