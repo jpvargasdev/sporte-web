@@ -33,7 +33,7 @@ const Header = () => {
    <header>
      <div className="container">
         <Link to='/'>
-          <IosAmericanFootball  fontSize="60px" color="#3b9bec" />
+          <img src={require("../../../images/logo.jpeg")} alt="sporte logo" />
         </Link >
        <nav>
          {

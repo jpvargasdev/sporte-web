@@ -9,7 +9,7 @@ export const BANNER_SIZE = {
 };
 
 const PublicityBanner = ({
-  className,
+  className = "",
   type,
 }) => (
   <div className={`publicity_banner ${className} publicity_banner-${type}`}>

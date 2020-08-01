@@ -1,3 +1,5 @@
+@import "../../../styles/settings";
+
 .publicity_banner {
   background-color: gray;
   justify-content: center;
@@ -7,11 +9,12 @@
     color: white;
   }
 
-  &-rectagle {
+  &-rectangle {
     margin-top: 30px;
     width: 80%;
-    display: flex;
-    flex: 1;
+    height: 120px;
+    margin-right: auto;
+    margin-left: auto;
   }
   
   &-portrait {
@@ -19,5 +22,16 @@
     height: 80%;
     display: flex;
     flex: 1;
+    padding: 0px;
+
+    @include respond-to("mobile") {
+      padding: 40px;
+    }
+    @include respond-to("small") {
+      padding: 40px;
+    }
+    @include respond-to("medium") {
+      padding: 40px;
+    }
   }
 }
