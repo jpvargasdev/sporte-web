@@ -31,7 +31,7 @@ StoryCard.propTypes = {
   bannerImage: PropTypes.shape({
     title: PropTypes.string,
     file: PropTypes.shape({
-    url: PropTypes.string,
+      url: PropTypes.string,
     }),
   }),
   linkHandler: PropTypes.func,

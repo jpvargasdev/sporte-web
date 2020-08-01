@@ -1,27 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Card} from 'antd';
-import "antd/dist/antd.css";
-import "./carousel.scss";
-import Following from "../../../Base/Following";
 
-const { Meta } = Card;
+//style
+import "antd/dist/antd.css";
 
 // components
+import CarrouselCard from '../../cards/CarrouselCard'
 import { Carousel } from 'antd';
-
-
-const CarouselItem = ({ img, title, description, linkHandler }) => (
-  <div className="content_carousel">
-      <div className="cardw__image" onClick={linkHandler}>
-      <img className='image' src={img.file.url} alt={img.title} />
-      <div className='card__title' >
-        <h3>{title}</h3>
-        <Following props='white'/>
-      </div>
-    </div>
-  </div>
-);
 
 const CarouselComponent = ({ cards }) => {
   return (
@@ -29,11 +14,10 @@ const CarouselComponent = ({ cards }) => {
       {
         cards.map(
           card => (
-            <CarouselItem
+            <CarrouselCard
               img={card.bannerImage}
               title={card.title}
               key={card.id}
-              description={card.description}
               linkHandler={card.linkHandler}
             />
           )
@@ -47,7 +31,6 @@ CarouselComponent.propTypes = {
     PropTypes.shape({
       img: PropTypes.string,
       title: PropTypes.string,
-      description: PropTypes.string,
     }),
   ),
 };

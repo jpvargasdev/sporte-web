@@ -18,6 +18,15 @@ export const query = graphql`
     contentfulPage(title: {eq: "Article"}) {
       description
       seoTitle
+      structure {
+        page {
+          widget {
+            items
+            type
+            title
+          }
+        }
+      }
     }
     allContentfulArticle {
       totalCount
@@ -45,6 +54,19 @@ export const query = graphql`
               url
             }
           }
+          facebookUrl
+          twitterUrl
+          instagramUrl
+        }
+        recomendations {
+          title
+          id
+          bannerImage {
+            title
+            file {
+              url
+            }
+          }
         }
       }
     }
@@ -52,7 +74,7 @@ export const query = graphql`
 `;
 
 const ArticlePage = ({ data, location }) => {
-  const { description } = data.contentfulPage;
+  const { description, structure } = data.contentfulPage;
 
   const { nodes } = data.allContentfulArticle;
 
@@ -70,7 +92,7 @@ const ArticlePage = ({ data, location }) => {
       <>
         <Seo title={title} description={description}/>
         <Layout>
-          <Article data={article && article[0]} />
+          <Article data={article && article[0]} structure={structure} />
         </Layout>
       </>
     );

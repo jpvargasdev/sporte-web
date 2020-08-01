@@ -1,44 +1,53 @@
 import React from "react";
-import { Row, Col } from 'antd';
 
 //styles
-import './Article.scss';
+import "./Article.scss";
 
 // components
 import renderRichText from "../../components/Base/RichText";
 import AuthorCard from "../../components/Elements/cards/AuthorCard";
-import PublicityBanner from '../../components/Base/PublicityBanner'
+import PublicityBanner, { BANNER_SIZE } from "../../components/Base/PublicityBanner";
+import WidgetFabric from "../../components/Helpers/WidgetFabric";
+import Share from '../../components/Base/Share';
 
-const Article = ({ data }) => {
+const Article = ({ data, structure }) => {
   const ContentText = renderRichText(data.content.json);
+  const { widget } = structure.page[0];
+
   return (
-    <article>
-       <Row gutter={[32, 16]} >
-       <Col span={6} >
-          <div className='public'>
-           <PublicityBanner />
+    <>
+      <div className="article article_container">
+
+        <div className="article article_banner_container">
+          <PublicityBanner className="article article_banner" type={BANNER_SIZE.PORTRAIT} />
+        </div>
+        <article className="article article_content">
+          <h1>{data.title}</h1>
+          <p>{data.description}</p>
+          <div >
+            <Share colorButton="primary" color="white" />
           </div>
-        </Col>
-        <Col span={12} >
-          <div className='content_article'>
-            <h1>{data.title}</h1>
-            <p>{data.description}</p>
-            <div className='content_img'>
-              <img className='image' src={data.bannerImage.file.url} alt={data.bannerImage.file.title}/>
-            </div>
-            <div className='contentText'>
-              {ContentText}
-            </div>
+          <div className="content_img">
+            <img className="image_article" src={data.bannerImage.file.url} alt={data.bannerImage.file.title}/>
           </div>
-      <AuthorCard data={data.author} />
-        </Col>
-        <Col span={6} >
-          <div className='public'>
-           <PublicityBanner />
+          <div className="contentText">
+            {ContentText}
           </div>
-        </Col>
-      </Row>
-    </article>
+          <AuthorCard data={data.author} />
+        
+        </article>
+
+        <div className="article article_banner_container">
+          <PublicityBanner className="article article_banner" type={BANNER_SIZE.PORTRAIT} />
+        </div>
+
+      </div>
+      <div className='recomendation_article'>
+        {data.recomendations && (
+          <WidgetFabric data={data.recomendations} { ...widget } />
+        )}
+      </div>
+    </>
   );
 };
 

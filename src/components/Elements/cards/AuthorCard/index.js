@@ -14,26 +14,26 @@ const { Meta } = Card;
 
 const ImageIcon = [
   {
-   Icons:LogoFacebook,
-    text:'Fasebook',
+    Icons: LogoFacebook,
+    text: 'facebookUrl',
   },
   {
-   Icons:LogoInstagram,
-    text:'instagram',
+    Icons: LogoInstagram,
+    text: 'instagramUrl',
   },
   {
-   Icons:LogoLinkedin,
-    text:'Likedin',
+    Icons: LogoLinkedin,
+    text: 'twitterUrl',
   },
 ]
 
 const AuthorCard = ({ data }) => {
   return (
-    <Card style={{ width: '100%', marginTop: 16, borderRadius:5, }}>
+    <Card style={{ width: '100%', marginTop: 16, borderRadius:5 }} >
     <Meta
       avatar={
         <div className='content_avatar'>
-          <Avatar size="large" src={data.profileImage.file.url}/>
+          <Avatar size="large" src={data.profileImage.file.url} />
         </div>
       }
       title={data.name}
@@ -41,8 +41,12 @@ const AuthorCard = ({ data }) => {
     />
       {
         ImageIcon.map(item => {
-          const {Icons} =item;
-          return<Icons key={item.text} onClick={() => alert('Hi!')} className='icons' fontSize="20px" color="black" />
+          const { Icons, text } = item;
+          return (
+            <a href={ data[text] } >
+              <Icons key={item.text}  className='icons' fontSize="23px" color="black" />
+            </a>
+          )
         })
       }
     </Card>
@@ -58,6 +62,7 @@ AuthorCard.propTypes = {
     }),
     name: PropTypes.string,
     description: PropTypes.string,
+    link: PropTypes.string,
   })
 };
 

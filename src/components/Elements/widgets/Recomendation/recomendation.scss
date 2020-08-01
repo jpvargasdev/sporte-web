@@ -1,0 +1,20 @@
+.card_recoment {
+  display: flex;
+  justify-content:space-between;
+  flex-wrap: wrap;
+    
+  @media screen and (max-width: 1456px) {
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 991px) {
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 680px) {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+    
+}

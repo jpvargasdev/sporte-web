@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Grid.scss';
+import './grid.scss';
 import ImageCard from '../../cards/ImageCard';
-import StoryCard from '../../cards/StoryCard';
 
 const Grid = ({
   cards
@@ -13,7 +12,7 @@ const Grid = ({
       {
         cards.map((card, index) => 
           <div key={index} className='List_card'>
-            <StoryCard  {...card} />
+            <ImageCard  {...card} />
           </div>
         )
       }
