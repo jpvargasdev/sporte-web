@@ -6,6 +6,7 @@ import {
   AuthorCard,
   RectangleCard,
   StoryCard,
+  ClientBanner,
 } from "../Elements/cards";
 
 // constants
@@ -14,6 +15,7 @@ const cardsMap = {
   authorCard: AuthorCard,
   rectangleCard: RectangleCard,
   storyCard: StoryCard,
+  ClientBanner: ClientBanner
 };
 
 const CardFabric = ({type, data}) => {

@@ -3,11 +3,13 @@
   background: #ececec;
 }
 
-.content_avatar {
-  height: 74px;
-}
-
 .icons {
   float: left;
   margin: 10px;
+}
+
+.content_icons {
+  display: flex;
+  justify-content: flex-end;
+  margin: 12px 0;
 }

@@ -27,7 +27,7 @@ const Icons = [
   }
 ]
 
-const Share = ({color, colorButton}) => {
+const Share = ({color, colorButton }) => {
   return(
     <div className='content_share'>
       <div className='span'>
@@ -49,6 +49,7 @@ const Share = ({color, colorButton}) => {
 Share.propTypes = {
   color: PropTypes.string,
   colorButton: PropTypes.string,
+
 }
 
 export default Share;

@@ -1,20 +1,20 @@
-import React from "react";
+import React from 'react';
 import PropTypes from "prop-types";
 
 //style
 import "antd/dist/antd.css";
 
 // components
-import CarrouselCard from '../../cards/CarrouselCard';
 import { Carousel } from 'antd';
+import CardClient from '../../cards/CardClient'
 
-const CarouselComponent = ({ cards }) => {
+const ClientWidgets = ({ cards }) => {
   return (
     <Carousel autoplay>
       {
         cards.map(
           card => (
-            <CarrouselCard
+            <CardClient
               img={card.bannerImage}
               title={card.title}
               key={card.id}
@@ -26,7 +26,7 @@ const CarouselComponent = ({ cards }) => {
   );
 };
 
-CarouselComponent.propTypes = {
+ClientWidgets.propTypes = {
   item: PropTypes.arrayOf(
     PropTypes.shape({
       img: PropTypes.string,
@@ -35,4 +35,4 @@ CarouselComponent.propTypes = {
   ),
 };
 
-export default CarouselComponent;
+export default ClientWidgets;

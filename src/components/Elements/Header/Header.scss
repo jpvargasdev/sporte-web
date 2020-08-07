@@ -50,5 +50,55 @@ header {
         margin-left: 10px;
       }
     }
+   
+    .content_buttonicon {
+      display:inherit ;
+
+      @media screen and (max-width: 650px) {
+        display:none;
+      }
+    }
+
+    .navegation_hamburger {
+      display: none;
+      z-index: 17;
+
+        @media screen and (max-width: 650px) {
+          display:inherit;
+          margin: 0 50px;
+        }
+    }
+
+    //hamburguer---------
+
+    .hamburguer {
+      background-color: #000000e7; 
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      position: fixed;
+      top: 0;
+      z-index: 16;
+      user-select: none;
+      margin-left: 0px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hamburguer_button {
+      z-index: 2;
+      margin-bottom: 43px;
+    }
+
+    .menu{
+      display: block;
+      position:relative;
+      position: fixed;
+      top: 80px;
+      z-index: 1;
+      user-select: none;
+      margin-left: 0;
+      margin: 50% 0;
+    }
   }
 }

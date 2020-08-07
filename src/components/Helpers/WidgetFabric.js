@@ -4,6 +4,7 @@ import React from "react";
 import Grid from "../Elements/widgets/Grid";
 import Carousel from "../Elements/widgets/Carousel";
 import PublicityBanner from "../Base/PublicityBanner";
+import ClientWidgets from '../Elements/widgets/Clientwidgets'
 import Recomendation from "../Elements/widgets/Recomendation"
 import Title from "../Base/Title";
 

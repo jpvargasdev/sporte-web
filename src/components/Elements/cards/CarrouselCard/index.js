@@ -18,7 +18,7 @@ const CarrouselCard = ({ img, title, linkHandler }) => {
           <Share color='black'/>
         </div>
       </div>
-  </div>
+    </div>
   )
 }
 

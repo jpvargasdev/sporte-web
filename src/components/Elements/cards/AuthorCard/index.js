@@ -39,16 +39,19 @@ const AuthorCard = ({ data }) => {
       title={data.name}
       description={data.description}
     />
+     <div className='content_icons'>
       {
         ImageIcon.map(item => {
           const { Icons, text } = item;
           return (
-            <a href={ data[text] } >
-              <Icons key={item.text}  className='icons' fontSize="23px" color="black" />
-            </a>
+           
+              <a href={ data[text] } >
+                <Icons key={item.text}  className='icons' fontSize="23px" color="black" />
+              </a>
           )
         })
       }
+      </div>
     </Card>
   );
 }
