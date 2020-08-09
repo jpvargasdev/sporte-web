@@ -1,18 +1,16 @@
-import React from "react";
+import React from 'react';
 
-//styles
+// styles
 import './About.scss';
 
 // components
-import renderRichText from "../../components/Base/RichText";
+import renderRichText from '../../components/Base/RichText';
 
 const About = ({ content }) => {
   const ContentText = renderRichText(content);
   return (
-    <section className='contentText_About'>
-      <div className='content_About'>
-        {ContentText}
-      </div>
+    <section className="about">
+      {ContentText}
     </section>
   );
 };

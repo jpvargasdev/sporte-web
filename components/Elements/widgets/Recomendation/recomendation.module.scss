@@ -1,20 +1,10 @@
-.card_recoment {
+@import "../../../../styles/settings";
+
+.widget_recomendation {
   display: flex;
-  justify-content:space-between;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-    
-  @media screen and (max-width: 1456px) {
-    max-width: 100%;
-  }
-
-  @media screen and (max-width: 991px) {
-    margin: 0 auto;
-  }
-
-  @media screen and (max-width: 680px) {
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-    
+  width: 100%;
 }

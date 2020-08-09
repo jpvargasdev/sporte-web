@@ -1,15 +1,13 @@
 import React from 'react';
-import './Contact.scss'
+import './Contact.scss';
 
-//components
-import ContactBanner from '../../components/Elements/ContactBanner'
+// components
+import ContactBanner from '../../components/Elements/ContactBanner';
 
-const Contact = () => {
-  return(
-    <section className='content_tarjet'>
-      <ContactBanner />
-    </section>
-  )
-}
+const Contact = () => (
+  <section className="contact">
+    <ContactBanner />
+  </section>
+);
 
 export default Contact;

@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
 // components
-import Grid from "../Elements/widgets/Grid";
-import Carousel from "../Elements/widgets/Carousel";
-import PublicityBanner from "../Base/PublicityBanner";
-import ClientWidgets from '../Elements/widgets/Clientwidgets'
-import Recomendation from "../Elements/widgets/Recomendation"
-import Title from "../Base/Title";
+import Grid from '../Elements/widgets/Grid';
+import Carousel from '../Elements/widgets/Carousel';
+import PublicityBanner from '../Base/PublicityBanner';
+import ClientWidgets from '../Elements/widgets/Clientwidgets';
+import Recomendation from '../Elements/widgets/Recomendation';
+import Title from '../Base/Title';
 
 const widgetMap = {
   grid: Grid,
@@ -15,12 +15,14 @@ const widgetMap = {
   recomendation: Recomendation,
 };
 
-const WidgetFabric = ({ type, data, title, items }) => {
+const WidgetFabric = ({
+  type, data, title, items,
+}) => {
   const Widget = widgetMap[type];
   return (
     <>
       <section>
-        { title && <Title text={title}/> }
+        { title && <Title text={title} /> }
         <Widget cards={data} items={items} />
       </section>
     </>

@@ -5,20 +5,18 @@ import './grid.module.scss';
 import ImageCard from '../../cards/ImageCard';
 
 const Grid = ({
-  cards
-}) => {
-  return(
-    <section className='container_grid'>
-      {
-        cards.map((card, index) => 
-          <div key={index} className='List_card'>
-            <ImageCard  {...card} />
+  cards,
+}) => (
+  <section className="container_grid">
+    {
+        cards.map((card, index) => (
+          <div key={index} className="List_card">
+            <ImageCard {...card} />
           </div>
-        )
+        ))
       }
-    </section>
-  )
-} 
+  </section>
+);
 
 export default Grid;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ButtonFloat from '../../Base/ButtonFloat';
+import { Layout } from 'antd';
 
 import './footer.module.scss';
 
@@ -8,49 +8,55 @@ import './footer.module.scss';
 import LogoInstagram from 'react-ionicons/lib/LogoInstagram';
 import LogoFacebook from 'react-ionicons/lib/LogoFacebook';
 
+// constants
+const { Footer } = Layout;
+
 const Icon = [
   {
     Logo: LogoFacebook,
-    text:'facebook',
-    url: 'https://www.facebook.com/Ju4np44'
+    text: 'facebook',
+    url: 'https://www.facebook.com/Ju4np44',
   },
   {
     Logo: LogoInstagram,
-    text:'instagram',
-    url: 'https://www.instagram.com/iclown_/'
+    text: 'instagram',
+    url: 'https://www.instagram.com/iclown_/',
   },
 ];
 
-const Footer = ({
-  title,
-}) => {
-  return (
-    <div>
-    <ButtonFloat />
-      <footer>
-        <p>{title}</p>
-        <div className="container">
-          {
-            Icon.map(item => {
-              const { Logo } = item;
-              return (
-                <a href={item.url}>
-                  <Logo key={item.text} className='icon' fontSize="30px" color="grey" />
-                </a>
-              )
-            }) 
-          }
-        </div>
-      </footer>
-    </div>
-  );
-}
+const footerStyle = {
+  justifyContent: 'center',
+  flexDirection: 'column',
+  alignItems: 'center',
+  flex: 1,
+  display: 'flex',
+};
 
-Footer.propTypes = {
+const mFooter = ({
+  title,
+}) => (
+  <Footer className="footer" style={footerStyle}>
+    <p>{title}</p>
+    <div>
+      {
+        Icon.map((item) => {
+          const { Logo } = item;
+          return (
+            <a href={item.url}>
+              <Logo key={item.text} className="icon" fontSize="25px" color="white" />
+            </a>
+          );
+        })
+      }
+    </div>
+  </Footer>
+);
+
+mFooter.propTypes = {
   title: PropTypes.string,
 };
-Footer.defaultProps = {
-  title: "Copyright. © 2020. Sporte. Todos Los Derechos Reservados."
-}
+mFooter.defaultProps = {
+  title: 'Copyright. © 2020. Sporte. Todos Los Derechos Reservados.',
+};
 
-export default Footer;
+export default mFooter;

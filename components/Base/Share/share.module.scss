@@ -1,14 +1,16 @@
 .content_share {
   margin: 8px 29px;
-}
-
-.span {
   opacity: 1;
   transition: 0.5s;
   margin: 4px auto;
   display: flex;
   justify-content: flex-end;
- 
+
+  .icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .span_button {

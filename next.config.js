@@ -1,28 +1,28 @@
-const withCss = require('@zeit/next-css')
-const withSaas = require('@zeit/next-sass')
+const withCss = require('@zeit/next-css');
+const withSaas = require('@zeit/next-sass');
 
 module.exports = withCss(withSaas({
   webpack: (config, { isServer }) => {
     if (isServer) {
-      const antStyles = /antd\/.*?\/style\/css.*?/
-      const origExternals = [...config.externals]
+      const antStyles = /antd\/.*?\/style\/css.*?/;
+      const origExternals = [...config.externals];
       config.externals = [
         (context, request, callback) => {
-          if (request.match(antStyles)) return callback()
+          if (request.match(antStyles)) return callback();
           if (typeof origExternals[0] === 'function') {
-            origExternals[0](context, request, callback)
+            origExternals[0](context, request, callback);
           } else {
-            callback()
+            callback();
           }
         },
         ...(typeof origExternals[0] === 'function' ? [] : origExternals),
-      ]
+      ];
 
       config.module.rules.unshift({
         test: antStyles,
         use: 'null-loader',
-      })
+      });
     }
-    return config
+    return config;
   },
-}))
+}));

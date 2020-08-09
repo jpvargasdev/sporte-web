@@ -1,8 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 const types = {
   children: PropTypes.array,
@@ -58,9 +58,9 @@ H6.defaultProps = typesDefault;
 
 const options = {
   renderMark: {
-    [MARKS.BOLD]: text => <Bold>{text}</Bold>,
-    [MARKS.ITALIC]: text => <Italic>{text}</Italic>,
-    [MARKS.UNDERLINE]: text => <Underline>{text}</Underline>
+    [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
+    [MARKS.ITALIC]: (text) => <Italic>{text}</Italic>,
+    [MARKS.UNDERLINE]: (text) => <Underline>{text}</Underline>,
   },
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => <Paragraph>{children}</Paragraph>,
@@ -71,8 +71,8 @@ const options = {
     [BLOCKS.HEADING_4]: (node, children) => <H4>{children}</H4>,
     [BLOCKS.HEADING_5]: (node, children) => <H5>{children}</H5>,
     [BLOCKS.HEADING_6]: (node, children) => <H6>{children}</H6>,
-    [INLINES.ENTRY_HYPERLINK]: (node, children) => <a>{children}</a>
-  }
+    [INLINES.ENTRY_HYPERLINK]: (node, children) => <a>{children}</a>,
+  },
 };
 
 function renderRichText(richText) {

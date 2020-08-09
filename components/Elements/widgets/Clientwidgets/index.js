@@ -1,27 +1,26 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 // components
 import { Carousel } from 'antd';
-import CardClient from '../../cards/CardClient'
+import CardClient from '../../cards/CardClient';
 
-const ClientWidgets = ({ cards }) => {
-  return (
-    <Carousel autoplay>
-      {
+const ClientWidgets = ({ cards }) => (
+  <Carousel autoplay>
+    {
         cards.map(
-          card => (
+          (card) => (
             <CardClient
               img={card.bannerImage}
               title={card.title}
               key={card.id}
               linkHandler={card.linkHandler}
             />
-          )
-        )}
-    </Carousel>
-  );
-};
+          ),
+        )
+}
+  </Carousel>
+);
 
 ClientWidgets.propTypes = {
   item: PropTypes.arrayOf(

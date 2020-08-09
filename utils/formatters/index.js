@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 
 /**
  * Inject the link to redirect to desired page
@@ -6,10 +6,10 @@ import { useRouter } from 'next/router'
  * @returns {Object}
  */
 export function injectLinkHandler(card) {
-  const router = useRouter()
+  const router = useRouter();
   const getHref = (id) => ({
     pathname: '/article',
-    query: { id }
+    query: { id },
   });
   const linkHandler = () => router.push(getHref(card.sys.id));
   card.linkHandler = linkHandler;
@@ -18,22 +18,22 @@ export function injectLinkHandler(card) {
 
 /**
  * Create widgets structure to render
- * @param {Object} structure 
- * @param {Array} cards 
+ * @param {Object} structure
+ * @param {Array} cards
  */
 export function shapeContent(structure, cards) {
   const { page } = structure;
   const widgetsToRender = [];
   page.forEach(({ widget }) => {
     const data = [];
-    for (let i = 0; i < widget.items ; i++) {
+    for (let i = 0; i < widget.items; i++) {
       if (cards.length > 0) {
-        const card = injectLinkHandler(cards.shift())
+        const card = injectLinkHandler(cards.shift());
         data.push(card);
       }
     }
-    widgetsToRender.push({ type:widget.type, data:data, title: widget.title });
-    widgetsToRender.push({ type: "publicityBanner"});
+    widgetsToRender.push({ type: widget.type, data, title: widget.title });
+    widgetsToRender.push({ type: 'publicityBanner' });
   });
 
   return widgetsToRender;

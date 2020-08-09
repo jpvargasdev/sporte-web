@@ -1,21 +1,22 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // components
-import CarrouselCard from '../../cards/CarrouselCard';
 import { Carousel } from 'antd';
+import CarrouselCard from '../../cards/CarrouselCard';
 
 const CarouselComponent = ({ cards }) => (
   <Carousel autoplay>
     {
       cards.map(
-        card => (
+        (card) => (
           <CarrouselCard
             {...card.fields}
             linkHandler={card.linkHandler}
           />
-        )
-      )}
+        ),
+      )
+}
   </Carousel>
 );
 

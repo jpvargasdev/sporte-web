@@ -1,28 +1,29 @@
-import React from 'react' ;
+import React from 'react';
 import PropTypes from 'prop-types';
-import Router from 'next/router'
+import Router from 'next/router';
 
 import { Card } from 'antd';
 
-//styles
+// styles
 import './recomendation-card.module.scss';
 
 const RecomendationCard = ({
   bannerImage,
   title,
   linkHandler,
-}) => {
-  return(
-    <Card onClick={() => {
+}) => (
+  <Card
+    onClick={() => {
       linkHandler();
-    }} className="recomendation">
-      <img className=" recoment_img" src={bannerImage.fields.file.url} alt={bannerImage.fields.title}/>
-      <div className=" recoment_p">
-        <h6>{title}</h6>
-      </div>
-    </Card>
-  )
-} 
+    }}
+    className="recomendation"
+  >
+    <img className=" recoment_img" src={bannerImage.fields.file.url} alt={bannerImage.fields.title} />
+    <div className=" recoment_p">
+      <h6>{title}</h6>
+    </div>
+  </Card>
+);
 
 RecomendationCard.propTypes = {
   description: PropTypes.string,
@@ -33,17 +34,16 @@ RecomendationCard.propTypes = {
     }),
   }),
   linkHandler: PropTypes.func,
-}
+};
 
-RecomendationCard.defaultProps= {
-  title: "test",
+RecomendationCard.defaultProps = {
+  title: 'test',
   bannerImage: {
-    title: "test",
+    title: 'test',
     file: {
-      url: "testel c",
+      url: 'testel c',
     },
   },
-}
-
+};
 
 export default RecomendationCard;

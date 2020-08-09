@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
 // components
-import Layout from "../components/Elements/Layout";
-import Seo from "../components/Base/Seo";
+import Layout from '../components/Elements/Layout';
+import Seo from '../components/Base/Seo';
 
 // template
 import Article from '../templates/Article';
@@ -19,26 +19,26 @@ const Post = ({ page, query }) => {
     query: { id },
   } = useRouter();
   async function fetchEntries() {
-    const article = await client.getArticleById(id)
+    const article = await client.getArticleById(id);
     if (article.fields) return article.fields;
-    console.log(`Error getting Article`);
+    console.log('Error getting Article');
   }
 
   const [post, setPost] = useState(null);
 
   useEffect(() => {
     async function getPosts() {
-      const post = await fetchEntries()
-      setPost(post)
+      const post = await fetchEntries();
+      setPost(post);
     }
-    getPosts()
-  }, [])
+    getPosts();
+  }, []);
 
   if (!post) return null;
 
   return (
     <>
-      <Seo title={page.seoTitle} description={page.description}/>
+      <Seo title={page.seoTitle} description={page.description} />
       <Layout>
         <Article structure={page.structure} data={post} />
       </Layout>
@@ -52,7 +52,7 @@ export async function getStaticProps() {
     props: {
       page: page.fields,
     },
-  }
+  };
 }
 
 export default Post;

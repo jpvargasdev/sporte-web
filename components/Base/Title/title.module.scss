@@ -1,13 +1,16 @@
+@import "../../../styles/settings";
+
 .content_Title {
   background: transparent;
-  border-top:2px solid black;
-  margin: 46px 9px 0 9px;
-}
+  border-bottom: 2px solid black;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 1em;
 
-.title {
-  color: #000000;
-  font-size: 25px;
-  letter-spacing: 3px;
-  font-weight: bolder;
-  margin: 9px 0;
+  .title {
+    color: #000000;
+    font-weight: bolder;
+    margin: 0;
+    text-transform: uppercase;
+  }
 }

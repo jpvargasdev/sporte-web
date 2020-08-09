@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Avatar } from 'antd';
 
-//icons
-import LogoFacebook from 'react-ionicons/lib/LogoFacebook'
-import LogoInstagram from 'react-ionicons/lib/LogoInstagram'
-import LogoTwitter from 'react-ionicons/lib/LogoTwitter'
+// icons
+import LogoFacebook from 'react-ionicons/lib/LogoFacebook';
+import LogoInstagram from 'react-ionicons/lib/LogoInstagram';
+import LogoTwitter from 'react-ionicons/lib/LogoTwitter';
 
 import './author-card.module.scss';
 
@@ -24,36 +24,34 @@ const ImageIcon = [
     Icons: LogoTwitter,
     text: 'twitterUrl',
   },
-]
+];
 
-const AuthorCard = ({ data }) => {
-  return (
-    <Card style={{ width: '100%', marginTop: 16, borderRadius:5 }} >
+const AuthorCard = ({ data }) => (
+  <Card style={{ width: '100%', marginTop: 16, borderRadius: 5 }}>
     <Meta
-      avatar={
-        <div className='content_avatar'>
+      avatar={(
+        <div className="content_avatar">
           <Avatar size="large" src={data.profileImage.fields.file.url} />
         </div>
-      }
+      )}
       title={data.name}
       description={data.description}
     />
-     <div className='content_icons'>
+    <div className="content_icons">
       {
-        ImageIcon.map(item => {
+        ImageIcon.map((item) => {
           const { Icons, text } = item;
           return (
-           
-              <a href={ data[text] } >
-                <Icons key={item.text}  className='icons' fontSize="23px" color="black" />
-              </a>
-          )
+
+            <a href={data[text]}>
+              <Icons key={item.text} className="icons" fontSize="23px" color="black" />
+            </a>
+          );
         })
       }
-      </div>
-    </Card>
-  );
-}
+    </div>
+  </Card>
+);
 
 AuthorCard.propTypes = {
   data: PropTypes.shape({
@@ -65,8 +63,7 @@ AuthorCard.propTypes = {
     name: PropTypes.string,
     description: PropTypes.string,
     link: PropTypes.string,
-  })
+  }),
 };
-
 
 export default AuthorCard;

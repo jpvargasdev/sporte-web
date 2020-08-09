@@ -1,24 +1,34 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Layout, BackTop } from 'antd';
 
 //  components
-import Header from "../Header";
-import Footer from "../Footer"
+import Header from '../Header';
+import ButtonFloat from '../../Base/ButtonFloat';
+import Footer from '../Footer';
+import './layout.module.scss';
 
-const Layout = ({ children }) => {
+const { Content } = Layout;
+
+const mLayout = ({ children, useBackground = true }) => {
+  let styleContainer = '';
+  if (useBackground) styleContainer = 'site-layout-content';
   return (
-    <>
+    <Layout className="layout">
       <Header />
-      <main>
-        {children}
-      </main>
+      <Content className="site-layout-background" style={{ marginTop: '1em' }}>
+        <main className={styleContainer}>{children}</main>
+      </Content>
+      <BackTop>
+        <ButtonFloat />
+      </BackTop>
       <Footer />
-    </>
-  )
+    </Layout>
+  );
 };
 
-Layout.propTypes = {
+mLayout.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default Layout;
+export default mLayout;

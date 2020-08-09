@@ -1,26 +1,25 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 // utils
-import { injectLinkHandler } from "../../../../utils/formatters";
+import { injectLinkHandler } from '../../../../utils/formatters';
 
 // components
-import RecomendationCard from "../../cards/RecomendationCard";
+import RecomendationCard from '../../cards/RecomendationCard';
 
 // styles
-import "./recomendation.module.scss";
-
+import './recomendation.module.scss';
 
 const Recomendation = ({ cards, items }) => {
   let newCards = cards;
   if (!cards.length) return null;
   if (cards.length > items) newCards = cards.slice(0, items);
   return (
-    <section className="card_recoment">
+    <section className="widget_recomendation">
       {
-        newCards.map(( article ) => {
+        newCards.map((article) => {
           const card = injectLinkHandler(article);
-          return <RecomendationCard linkHandler={card.linkHandler} { ...card.fields } key={card.id}/>;
+          return <RecomendationCard linkHandler={card.linkHandler} {...card.fields} key={card.id} />;
         })
       }
     </section>
@@ -55,7 +54,6 @@ Recomendation.propTypes = {
 //     </div>
 //   </div>
 // )
-
 
 // Recomen.propTypes = {
 //   description: PropTypes.string,

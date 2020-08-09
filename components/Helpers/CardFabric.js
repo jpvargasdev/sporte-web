@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 // components
 import {
@@ -7,7 +7,7 @@ import {
   RectangleCard,
   StoryCard,
   ClientBanner,
-} from "../Elements/cards";
+} from '../Elements/cards';
 
 // constants
 const cardsMap = {
@@ -15,10 +15,10 @@ const cardsMap = {
   authorCard: AuthorCard,
   rectangleCard: RectangleCard,
   storyCard: StoryCard,
-  ClientBanner: ClientBanner
+  ClientBanner,
 };
 
-const CardFabric = ({type, data}) => {
+const CardFabric = ({ type, data }) => {
   const Card = cardsMap[type];
   return (
     <Card {...data} />

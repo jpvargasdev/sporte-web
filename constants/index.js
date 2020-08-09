@@ -6,5 +6,5 @@ export const PAGES_IDS = {
 };
 
 export const USER_IDS = {
-  
+
 };

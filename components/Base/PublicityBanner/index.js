@@ -1,15 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import "./publicity-banner.module.scss";
+import './publicity-banner.module.scss';
 
 export const BANNER_SIZE = {
-  RECTANGLE: "rectangle",
-  PORTRAIT: "portrait",
+  RECTANGLE: 'rectangle',
+  PORTRAIT: 'portrait',
 };
 
 const PublicityBanner = ({
-  className = "",
+  className = '',
   type,
 }) => (
   <div className={`publicity_banner ${className} publicity_banner-${type}`}>
@@ -19,11 +19,11 @@ const PublicityBanner = ({
 
 PublicityBanner.propTypes = {
   className: PropTypes.string,
-  type: PropTypes.oneOf["", ""],
+  type: PropTypes.oneOf['', ''],
 };
 
 PublicityBanner.defaultProps = {
-  type: BANNER_SIZE.RECTANGLE
+  type: BANNER_SIZE.RECTANGLE,
 };
 
 export default PublicityBanner;
