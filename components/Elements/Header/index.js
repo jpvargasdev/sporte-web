@@ -25,10 +25,7 @@ const mHeader = () => (
       theme="light"
       mode="horizontal"
       style={{
-        height: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        display: 'flex',
+        height: '100%', justifyContent: 'center', alignItems: 'center', display: 'flex',
       }}
     >
       <Menu.Item key="1">

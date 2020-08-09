@@ -1,3 +1,23 @@
+@import "../../../../styles/settings";
+
 .meta:hover {
   box-shadow: green;
+}
+
+.card_img {
+  margin: 1em;
+  border-radius: 5px;
+  
+  @include respond-to("mobile") {
+    width: 21em;
+  }
+  @include respond-to("small") {
+    width: 22em;
+  }
+  @include respond-to("medium") {
+    width: 23em;
+  }
+  @include respond-to("large") {
+    width: 24em;
+  }
 }
