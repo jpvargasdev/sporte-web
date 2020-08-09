@@ -1,0 +1,29 @@
+html {
+  box-sizing: border-box;
+  font-size: $base-font-size;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit
+}
+
+body {
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  color: $base-font-color;
+  background-color: $base-background-color;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  // Scale the base font size
+  @for $i from 1 through length($font-scale-breakpoints) {
+    @include min-width-media-query($i, $font-scale-breakpoints) {
+      font-size: nth($base-font-sizes, $i);
+    }
+  }
+}

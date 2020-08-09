@@ -1,0 +1,42 @@
+.cardh__image{
+  width: 350px;
+  height: 350px;
+  margin: 19px 0;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  overflow: hidden;
+  border-radius: 5px;
+
+  .image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .card__title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index:1;
+    background: black;
+    padding: 1px 22px 19px;
+  }
+  
+  h3 {
+    font-size: 20px;
+    color: white;
+  }
+
+  .text {
+    font-size: 12.5px;
+    float: left;
+    color: #f3f3f3;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  Button {
+    margin: 11px 0 0;
+  }
+
+}

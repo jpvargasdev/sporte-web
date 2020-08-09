@@ -1,0 +1,86 @@
+@import "../../styles/settings";
+
+.article {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  flex-direction: column;
+  
+  &_container {
+    display: flex;
+    flex-direction: row;
+
+    @include respond-to("mobile") {
+      flex-direction: column;
+    }
+    @include respond-to("small") {
+      flex-direction: column;
+    }
+    @include respond-to("medium") {
+      flex-direction: row;
+    }
+  }
+
+  &_content {
+    flex: 0.8;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+  }
+
+  &_banner_container {
+    flex: 0.2;
+  }
+
+  &_banner {
+    flex: 1;
+  }
+    
+  
+  h1 {
+    font-size: 33px;
+    line-height: 43px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: black;
+  }
+  
+  h4 {
+    font-size: 20px;
+    color: black;
+    letter-spacing: 1px;
+  }
+  
+  p {
+    font-size: 17.5px;
+    margin: 24px 0;
+    letter-spacing: 1px;
+    color: #353535;
+  }
+  
+  .contentText {
+    margin: 37px 0;
+  }
+  
+  .content_img {
+    width: 100%;
+  }
+  
+  .image_article {
+    width:100%;
+  }
+  
+  hr {
+    color: red;
+  }
+
+  .article_share {
+    display: flex;
+    justify-content: flex-end;
+    position: none;  
+  }
+}
+  .recomendation_article {
+    margin: 100px 0;
+  }
+  

@@ -1,0 +1,14 @@
+.container_grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  flex: 1;
+  justify-content: space-between;
+  
+
+  @media screen and (max-width: 810px) {
+    display: flex;
+    justify-content: center;
+  }
+}

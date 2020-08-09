@@ -1,0 +1,90 @@
+.content_carousel {
+  display: flex;
+  margin-bottom: 32px;
+  margin-top: 20px;
+  justify-content: center;
+  border-radius: 5px;
+  
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.6s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.cardw__image{
+  width: 791px;
+  height: 495px;
+  margin: 20px 0;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.card__title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #000000e3;
+  padding: 0px 31px 21px;
+  text-shadow: none;
+  box-shadow: 0px -5px 20px 20px #000000e3;
+
+}
+
+.h3 {
+  font-size: 23px;
+  color: white;
+  transition: 0.3s;
+
+  &:hover {
+    color: rgb(211, 211, 211);
+  }
+}
+
+
+.text {
+  font-size: 12.5px;
+  float: left;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  &:hover {
+    color: rgb(168, 168, 168);
+  }
+}
+
+
+// styles
+.ant-card-bordered {
+  border: 1px solid #e0e0e0;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  background: #37a1ffd4;
+  opacity: 1;
+}
+
+.ant-carousel .slick-dots li button {
+  display: block;
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  padding: 0;
+  color: #40a9ff;
+  font-size: 0;
+  background: #808080;
+  border: 0;
+  border-radius: 1px;
+  outline: none;
+  opacity: 0.3;
+  transition: all 0.5s;
+}
