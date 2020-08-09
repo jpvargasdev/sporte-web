@@ -1,45 +1,81 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Drawer } from 'antd';
+
+// components
+import MdMenu from 'react-ionicons/lib/MdMenu';
 
 // style
 import './header.module.scss';
 
 const { Header } = Layout;
 
-const mHeader = () => (
-  <Header style={{
-    position: 'fixed',
-    zIndex: 1,
-    width: '100%',
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    height: '6em',
-  }}
-  >
-    <a href="/">
-      <img src="/logo.png" alt="sporte logo" />
-    </a>
-    <Menu
-      theme="light"
-      mode="horizontal"
+const mHeader = () => {
+  const [header, setHeader] = useState(false);
+
+  return (
+    <Header
       style={{
-        height: '100%', justifyContent: 'center', alignItems: 'center', display: 'flex',
+        position: 'fixed',
+        zIndex: 1,
+        width: '100%',
       }}
+      className="header"
     >
-      <Menu.Item key="1">
-        <a href="/about/">
-          Sobre Nosotros
+      <div className="header-horizontal">
+        <a href="/">
+          <img src="/logo.png" alt="sporte logo" />
         </a>
-      </Menu.Item>
-      <Menu.Item key="2">
-        <a href="/contact/">
-          Contacto
+        <Menu
+          theme="light"
+          mode="horizontal"
+          style={{
+            height: '100%',
+            justifyContent: 'center',
+            alignItems: 'center',
+            display: 'flex',
+          }}
+        >
+          <Menu.Item key="1">
+            <a href="/about/">
+              Sobre Nosotros
+            </a>
+          </Menu.Item>
+          <Menu.Item key="2">
+            <a href="/contact/">
+              Contacto
+            </a>
+          </Menu.Item>
+        </Menu>
+      </div>
+      <div className="header-vertical">
+        <a href="/">
+          <img src="/logo.png" alt="sporte logo" />
         </a>
-      </Menu.Item>
-    </Menu>
-  </Header>
-);
+        <button className="menu_icon" type="button" onClick={() => setHeader(true)}>
+          <MdMenu fontSize="30px" />
+        </button>
+      </div>
+      <Drawer
+        placement="right"
+        closable
+        onClose={() => setHeader(false)}
+        visible={header}
+        className="drawer"
+      >
+        <div className="item-drawer">
+          <a href="/about/" onClick={() => setHeader(false)}>
+            Sobre Nosotros
+          </a>
+        </div>
+        <div className="item-drawer">
+          <a href="/contact/" onClick={() => setHeader(false)}>
+            Contacto
+          </a>
+        </div>
+      </Drawer>
+    </Header>
+  );
+};
 
 export default mHeader;
