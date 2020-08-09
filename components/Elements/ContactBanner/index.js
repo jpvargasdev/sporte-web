@@ -1,15 +1,15 @@
 import React from 'react';
-import './contact-banner.modules.scss';
 import { Input } from 'antd';
 import { Button } from 'antd';
 import { UserOutlined, MailOutlined, MessageOutlined } from '@ant-design/icons';
+
+
+import './contact-banner.module.scss';
 
 // icons
 import IosPin from 'react-ionicons/lib/IosPin'
 import IosMail from 'react-ionicons/lib/IosMail'
 import IosCall from 'react-ionicons/lib/IosCall'
-
-
 
 const Icons = [
   {

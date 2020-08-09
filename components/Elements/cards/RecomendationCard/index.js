@@ -1,10 +1,11 @@
 import React from 'react' ;
 import PropTypes from 'prop-types';
+import Router from 'next/router'
 
+import { Card } from 'antd';
 
-//styles 
+//styles
 import './recomendation-card.module.scss';
-
 
 const RecomendationCard = ({
   bannerImage,
@@ -12,12 +13,14 @@ const RecomendationCard = ({
   linkHandler,
 }) => {
   return(
-    <div onClick={linkHandler} className="recomendation">
-      <img className=" recoment_img" src={bannerImage.file.url} alt={bannerImage.title}/>
+    <Card onClick={() => {
+      linkHandler();
+    }} className="recomendation">
+      <img className=" recoment_img" src={bannerImage.fields.file.url} alt={bannerImage.fields.title}/>
       <div className=" recoment_p">
         <h6>{title}</h6>
       </div>
-    </div>
+    </Card>
   )
 } 
 

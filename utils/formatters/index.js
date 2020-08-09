@@ -7,8 +7,11 @@ import { useRouter } from 'next/router'
  */
 export function injectLinkHandler(card) {
   const router = useRouter()
-
-  const linkHandler = () => router.push(`/article?id=${card.id}`);
+  const getHref = (id) => ({
+    pathname: '/article',
+    query: { id }
+  });
+  const linkHandler = () => router.push(getHref(card.sys.id));
   card.linkHandler = linkHandler;
   return card;
 }

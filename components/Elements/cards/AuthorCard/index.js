@@ -7,7 +7,7 @@ import LogoFacebook from 'react-ionicons/lib/LogoFacebook'
 import LogoInstagram from 'react-ionicons/lib/LogoInstagram'
 import LogoTwitter from 'react-ionicons/lib/LogoTwitter'
 
-import './author-card.module.css';
+import './author-card.module.scss';
 
 const { Meta } = Card;
 
@@ -32,7 +32,7 @@ const AuthorCard = ({ data }) => {
     <Meta
       avatar={
         <div className='content_avatar'>
-          <Avatar size="large" src={data.profileImage.file.url} />
+          <Avatar size="large" src={data.profileImage.fields.file.url} />
         </div>
       }
       title={data.name}

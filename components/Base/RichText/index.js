@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const types = {
-  children: PropTypes.shape({})
+  children: PropTypes.array,
 };
 const typesDefault = {
-  children: {}
+  children: PropTypes.array,
 };
 
 const Bold = ({ children }) => <span className="font-bold">{children}</span>;
@@ -70,12 +70,13 @@ const options = {
     [BLOCKS.HEADING_3]: (node, children) => <H3>{children}</H3>,
     [BLOCKS.HEADING_4]: (node, children) => <H4>{children}</H4>,
     [BLOCKS.HEADING_5]: (node, children) => <H5>{children}</H5>,
-    [BLOCKS.HEADING_6]: (node, children) => <H6>{children}</H6>
+    [BLOCKS.HEADING_6]: (node, children) => <H6>{children}</H6>,
+    [INLINES.ENTRY_HYPERLINK]: (node, children) => <a>{children}</a>
   }
 };
 
-function renderRichText(json) {
-  return documentToReactComponents(json, options);
+function renderRichText(richText) {
+  return documentToReactComponents(richText, options);
 }
 
 export default renderRichText;

@@ -20,7 +20,7 @@ const Recomendation = ({ cards, items }) => {
       {
         newCards.map(( article ) => {
           const card = injectLinkHandler(article);
-          return <RecomendationCard { ...card } key={card.id}/>;
+          return <RecomendationCard linkHandler={card.linkHandler} { ...card.fields } key={card.id}/>;
         })
       }
     </section>

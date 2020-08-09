@@ -7,7 +7,7 @@ import './About.scss';
 import renderRichText from "../../components/Base/RichText";
 
 const About = ({ content }) => {
-  const ContentText = renderRichText(content.json);
+  const ContentText = renderRichText(content);
   return (
     <section className='contentText_About'>
       <div className='content_About'>
