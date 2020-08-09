@@ -2,9 +2,6 @@ import React from 'react';
 
 import { Layout, Menu } from 'antd';
 
-// Components
-import Link from 'next/link';
-
 // style
 import './header.module.scss';
 
@@ -21,19 +18,19 @@ const mHeader = () => (
     height: '6em',
   }}
   >
-    <Link href="/">
+    <a href="/">
       <img src="/logo.png" alt="sporte logo" />
-    </Link>
+    </a>
     <Menu theme="light" mode="horizontal" style={{ height: '100%', justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
       <Menu.Item key="1">
-        <Link href="/about/">
+        <a href="/about/">
           Sobre Nosotros
-        </Link>
+        </a>
       </Menu.Item>
       <Menu.Item key="2">
-        <Link href="/contact/">
+        <a href="/contact/">
           Contacto
-        </Link>
+        </a>
       </Menu.Item>
     </Menu>
   </Header>

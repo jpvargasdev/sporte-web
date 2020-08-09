@@ -1,36 +1,25 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './grid.module.scss';
 import ImageCard from '../../cards/ImageCard';
 
 const Grid = ({
   cards,
-}) => (
-  <section className="container_grid">
-    {
+}) => {
+  console.log(cards);
+  return (
+    <section className="container_grid">
+      {
         cards.map((card, index) => (
           <div key={index} className="List_card">
-            <ImageCard {...card} />
+            <ImageCard linkHandler={card.linkHandler} {...card.fields} />
           </div>
         ))
       }
-  </section>
-);
+    </section>
+  );
+};
 
 export default Grid;
-
-Grid.propTypes = {
-  cards: PropTypes.arrayOf(
-    PropTypes.shape({
-      img: PropTypes.shape({
-        src: PropTypes.string,
-        alt: PropTypes.string,
-      }),
-      meta: PropTypes.shape({
-        title: PropTypes.string,
-        description: PropTypes.string,
-      }),
-    }),
-  ),
-};

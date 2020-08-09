@@ -18,10 +18,10 @@ const ImageCard = ({
     onClick={linkHandler}
     hoverable
     style={{
-      width: 240, margin: 10, boxShadow: 'green', borderRadius: 5,
+      width: 360, margin: 10, borderRadius: 5,
     }}
     cover={
-      <img alt={bannerImage.title} src={bannerImage.file.url} />
+      <img alt={bannerImage.fields.title} src={bannerImage.fields.file.url} />
       }
   >
     <Meta title={title} description={description} />
@@ -33,12 +33,14 @@ ImageCard.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   bannerImage: PropTypes.shape({
-    title: PropTypes.string,
-    file: PropTypes.shape({
-      url: PropTypes.string,
+    fields: PropTypes.shape({
+      title: PropTypes.string,
+      file: PropTypes.shape({
+        url: PropTypes.string,
+      }),
     }),
   }),
-  linkHandler: PropTypes.func,
+  linkHandler: PropTypes.func.isRequired,
 };
 
 ImageCard.defaultProps = {

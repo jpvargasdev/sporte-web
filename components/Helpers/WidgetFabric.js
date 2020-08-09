@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 // components
@@ -13,16 +14,18 @@ const widgetMap = {
   carousel: Carousel,
   publicityBanner: PublicityBanner,
   recomendation: Recomendation,
+  client: ClientWidgets,
 };
 
 const WidgetFabric = ({
   type, data, title, items,
 }) => {
   const Widget = widgetMap[type];
+  const showTitle = title || (title !== '' && title && title.length > 3);
   return (
     <>
       <section>
-        { title && <Title text={title} /> }
+        { showTitle && <Title text={title} /> }
         <Widget cards={data} items={items} />
       </section>
     </>

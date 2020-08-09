@@ -14,14 +14,15 @@ import * as client from '../api';
 // constants
 import { PAGES_IDS } from '../constants';
 
-const Post = ({ page, query }) => {
+const Post = ({ page }) => {
   const {
     query: { id },
   } = useRouter();
+
   async function fetchEntries() {
     const article = await client.getArticleById(id);
     if (article.fields) return article.fields;
-    console.log('Error getting Article');
+    return null;
   }
 
   const [post, setPost] = useState(null);

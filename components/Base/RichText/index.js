@@ -1,15 +1,8 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import { BLOCKS, MARKS, INLINES } from '@contentful/rich-text-types';
+import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-
-const types = {
-  children: PropTypes.array,
-};
-const typesDefault = {
-  children: PropTypes.array,
-};
 
 const Bold = ({ children }) => <span className="font-bold">{children}</span>;
 
@@ -33,28 +26,13 @@ const H5 = ({ children }) => <h5>{children}</h5>;
 
 const H6 = ({ children }) => <h6>{children}</h6>;
 
-Bold.propTypes = types;
-Bold.defaultProps = typesDefault;
-Italic.propTypes = types;
-Italic.defaultProps = typesDefault;
-Underline.propTypes = types;
-Underline.defaultProps = typesDefault;
-Paragraph.propTypes = types;
-Paragraph.defaultProps = typesDefault;
-Hr.propTypes = types;
-Hr.defaultProps = typesDefault;
-H1.propTypes = types;
-H1.defaultProps = typesDefault;
-H2.propTypes = types;
-H2.defaultProps = typesDefault;
-H3.propTypes = types;
-H3.defaultProps = typesDefault;
-H4.propTypes = types;
-H4.defaultProps = typesDefault;
-H5.propTypes = types;
-H5.defaultProps = typesDefault;
-H6.propTypes = types;
-H6.defaultProps = typesDefault;
+const Custom = ({ node }) => {
+  const { file } = node.data.target.fields;
+  const { url, fileName } = file;
+  return (
+    <img className="embed-image" src={url} alt={fileName} />
+  );
+};
 
 const options = {
   renderMark: {
@@ -71,7 +49,7 @@ const options = {
     [BLOCKS.HEADING_4]: (node, children) => <H4>{children}</H4>,
     [BLOCKS.HEADING_5]: (node, children) => <H5>{children}</H5>,
     [BLOCKS.HEADING_6]: (node, children) => <H6>{children}</H6>,
-    [INLINES.ENTRY_HYPERLINK]: (node, children) => <a>{children}</a>,
+    [BLOCKS.EMBEDDED_ASSET]: (node, children) => <Custom node={node} />,
   },
 };
 

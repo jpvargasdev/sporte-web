@@ -1,20 +1,20 @@
 @import "../../../styles/settings";
 
 main {
-  width: 100%;
+  width: 95%;
   margin-right: auto;
   margin-left: auto;
   margin-top: 5em;
 
   @include respond-to("mobile") {
-    width: 100%;
+    width: 95%;
     overflow-x: hidden;
   }
   @include respond-to("small") {
-    width: 100%;
+    width: 95%;
   }
   @include respond-to("medium") {
-    width: 80%;
+    width: 90%;
   }
   @include respond-to("large") {
     width: 70%;
@@ -23,8 +23,8 @@ main {
 
 .site-layout-content {
   background-color: white;
-  padding-left: 3em;
-  padding-right: 3em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
   padding-bottom: 3em;
 }
 

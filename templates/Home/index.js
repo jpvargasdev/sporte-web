@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 // Components
@@ -14,6 +16,7 @@ const Home = ({
   return (
     <>
       {widgetsData.map((widgetData, index) => (
+        // eslint-disable-next-line react/no-array-index-key
         <WidgetFabric {...widgetData} key={index} />
       ))}
     </>
