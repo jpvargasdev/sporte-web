@@ -63,7 +63,7 @@ AuthorCard.propTypes = {
     name: PropTypes.string,
     description: PropTypes.string,
     link: PropTypes.string,
-  }),
+  }).isRequired,
 };
 
 export default AuthorCard;

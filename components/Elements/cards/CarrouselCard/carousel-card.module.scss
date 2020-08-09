@@ -1,3 +1,5 @@
+@import "../../../../styles/settings";
+
 .content_carousel {
   display: flex;
   margin-bottom: 32px;
@@ -20,13 +22,25 @@
 
 .cardw__image{
   width: 791px;
-  height: 495px;
   margin: 20px 0;
   cursor: pointer;
   position: relative;
   top: 0;
   overflow: hidden;
   border-radius: 5px;
+
+  @include respond-to("mobile") {
+    height: 27em;
+  }
+  @include respond-to("small") {
+    height: 30em;
+  }
+  @include respond-to("medium") {
+    height: 34em;
+  }
+  @include respond-to("large") {
+    height: 34em;
+  } 
 }
 
 .card__title {
@@ -43,6 +57,19 @@
     color: white;
     transition: 0.3s;
   
+    @include respond-to("mobile") {
+      font-size: 1.4em;
+    }
+    @include respond-to("small") {
+      font-size: 1.4em;
+    }
+    @include respond-to("medium") {
+      font-size: 1.8em;
+    }
+    @include respond-to("large") {
+      font-size: 1.8em;
+    } 
+
     &:hover {
       color: rgb(211, 211, 211);
     }

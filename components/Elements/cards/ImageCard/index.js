@@ -17,9 +17,7 @@ const ImageCard = ({
   <Card
     onClick={linkHandler}
     hoverable
-    style={{
-      width: 360, margin: 10, borderRadius: 5,
-    }}
+    className="card_img"
     cover={
       <img alt={bannerImage.fields.title} src={bannerImage.fields.file.url} />
       }
