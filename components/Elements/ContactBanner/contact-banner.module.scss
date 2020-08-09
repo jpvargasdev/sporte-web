@@ -14,9 +14,12 @@ form {
   @include respond-to("mobile") {
     width: 100%;
     flex-direction: column;
+    margin-top: 2em;
   }
   @include respond-to("small") {
     width: 100%;
+    flex-direction: column;
+    margin-top: 2em;
   }
   @include respond-to("medium") {
     width: 90%;
