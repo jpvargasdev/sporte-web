@@ -21,7 +21,16 @@ const mHeader = () => (
     <a href="/">
       <img src="/logo.png" alt="sporte logo" />
     </a>
-    <Menu theme="light" mode="horizontal" style={{ height: '100%', justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
+    <Menu
+      theme="light"
+      mode="horizontal"
+      style={{
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        display: 'flex',
+      }}
+    >
       <Menu.Item key="1">
         <a href="/about/">
           Sobre Nosotros

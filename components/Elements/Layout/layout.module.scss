@@ -21,14 +21,15 @@ main {
   }
 }
 
-.site-layout-content {
-  background-color: white;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  padding-bottom: 3em;
+.layout {
+  .site-layout-content {
+    background-color: white;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    padding-bottom: 3em;
+  }
 }
 
-.site-background-layout {
+.ant-layout {
   background-color: #f0f2f5;
 }
-
