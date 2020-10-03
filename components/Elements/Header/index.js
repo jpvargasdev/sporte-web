@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Layout, Menu, Drawer } from 'antd';
+import { Layout, Drawer } from 'antd';
 
 // components
 import MdMenu from 'react-ionicons/lib/MdMenu';
@@ -11,6 +11,7 @@ import './header.module.scss';
 const { Header } = Layout;
 
 const mHeader = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [header, setHeader] = useState(false);
 
   return (
@@ -22,39 +23,17 @@ const mHeader = () => {
       }}
       className="header"
     >
-      <div className="header-horizontal">
+      <div className="logo">
         <a href="/">
           <img src="/logo.png" alt="sporte logo" />
         </a>
-        <Menu
-          theme="light"
-          mode="horizontal"
-          style={{
-            height: '100%',
-            justifyContent: 'center',
-            alignItems: 'center',
-            display: 'flex',
-          }}
-        >
-          <Menu.Item key="1">
-            <a href="/about/">
-              Sobre Nosotros
-            </a>
-          </Menu.Item>
-          <Menu.Item key="2">
-            <a href="/contact/">
-              Contacto
-            </a>
-          </Menu.Item>
-        </Menu>
       </div>
       <div className="header-vertical">
-        <a href="/">
-          <img src="/logo.png" alt="sporte logo" />
-        </a>
-        <button className="menu_icon" type="button" onClick={() => setHeader(true)}>
-          <MdMenu fontSize="30px" />
-        </button>
+        <div className="content_menu">
+          <button className="menu_icon" type="button" onClick={() => setHeader(true)}>
+            <MdMenu fontSize="30px" />
+          </button>
+        </div>
       </div>
       <Drawer
         placement="right"
