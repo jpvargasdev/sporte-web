@@ -4,7 +4,7 @@ main {
   width: 95%;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 2em;
+  margin-top: 5em;
 
   @include respond-to("mobile") {
     width: 95%;

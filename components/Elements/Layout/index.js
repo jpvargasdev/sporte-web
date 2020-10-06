@@ -4,7 +4,6 @@ import { Layout, BackTop } from 'antd';
 
 //  components
 import Header from '../Header';
-import HeaderSub from '../HeaderSub';
 import ButtonFloat from '../../Base/ButtonFloat';
 import Footer from '../Footer';
 import './layout.module.scss';
@@ -17,7 +16,6 @@ const mLayout = ({ children, useBackground = true }) => {
   return (
     <Layout className="layout">
       <Header />
-      <HeaderSub />
       <Content className="site-layout-background" style={{ marginTop: '1em' }}>
         <main className={styleContainer}>{children}</main>
       </Content>

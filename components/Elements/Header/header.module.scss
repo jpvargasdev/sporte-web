@@ -14,13 +14,11 @@
     height: 4em;
   }
   @include respond-to("small") {
-    height: 6em;
+    height: 4em;
   }
   @include respond-to("medium") {
     height: 6em;
   }
-
-  
 
   img {
     width: 100px;
@@ -32,27 +30,40 @@
       width: 70px;
     }
     @include respond-to("small") {
-      width: 100px;
+      width: 70px;
     }
     @include respond-to("medium") {
       width: 100px;
     }
   }
-  
-  .logo {
-    justify-content: flex-end;
+
+  &-horizontal {
     display: flex;
     width: 100%;
+    height: 100%;
     align-items: center;
+    justify-content: space-around;
+    padding-bottom: 1px;
+
+    @include respond-to("mobile") {
+      display: none;
+    }
+    @include respond-to("small") {
+      display: none;
+    }
+    @include respond-to("medium") {
+      display: flex;
+      height: 6em;
+    }
   }
 
   &-vertical {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 100%;
-    justify-content: space-around;
-    align-items: center;
-    padding-bottom: 1px;
+    padding: 0px;
     @include respond-to("mobile") {
       display: flex;
     }
@@ -60,9 +71,9 @@
       display: flex;
     }
     @include respond-to("medium") {
-      display: flex;
+      display: none;
     }
-   
+
     .menu_icon {
       display: flex;
       background-color: white;
@@ -81,15 +92,5 @@
 }
 
 .item-drawer {
-  margin-top: 1.3em;
-  
-  a {
-    color: black;
-    transition: .2s;
-    font-size: 1rem;
-
-    &:hover {
-      color: #40a9ff;
-    }
-  }
+  margin-top: 10px;
 }
