@@ -1,4 +1,4 @@
-import Reaact, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // components
 import Layout from '../components/Elements/Layout';
@@ -20,6 +20,7 @@ const HomePage = ({ page }) => {
       return entries.items;
     }
     console.log('Error getting Entries for articles.');
+    return [];
   }
 
   const [posts, setPosts] = useState([]);

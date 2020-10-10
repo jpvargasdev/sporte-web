@@ -10,13 +10,13 @@ import './layout.module.scss';
 
 const { Content } = Layout;
 
-const mLayout = ({ children, useBackground = true }) => {
+const mLayout = ({ children, useBackground = true, hideMenuBar = false, hideMenuIcon = false }) => {
   let styleContainer = '';
   if (useBackground) styleContainer = 'site-layout-content';
   return (
     <Layout className="layout">
-      <Header />
-      <Content className="site-layout-background" style={{ marginTop: '1em' }}>
+      <Header hideMenuBar={hideMenuBar} hideMenuIcon={hideMenuIcon} />
+      <Content className="site-layout-background" style={{ marginTop: '4em' }}>
         <main className={styleContainer}>{children}</main>
       </Content>
       <BackTop>
