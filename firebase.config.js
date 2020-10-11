@@ -20,9 +20,11 @@ const getFirebase = () => {
       measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
     };
     firebase.initializeApp(config);
-    firebase.auth().signInAnonymously().catch((error) => {
-      console.error('Firebase admin initialization error', error.message);
-    });
+    if (firebase.auth().currentUser == null) {
+      firebase.auth().signInAnonymously().catch((error) => {
+        console.error('Firebase admin initialization error', error.message);
+      });
+    }
   } catch (error) {
     /*
    * We skip the "already exists" message which is
