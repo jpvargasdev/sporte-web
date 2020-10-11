@@ -1,10 +1,11 @@
 import React from 'react';
 import '../styles/index.scss';
 import 'antd/dist/antd.css';
-import loadDb from '../firebase.config';
+
+import getFirebase from '../firebase.config';
 
 function MyApp({ Component, pageProps }) {
-  loadDb();
+  getFirebase();
   return <Component {...pageProps} />;
 }
 

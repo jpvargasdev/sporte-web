@@ -29,7 +29,7 @@ const mHeader = ({ hideMenuBar, hideMenuIcon }) => {
               <MdMenu fontSize="25px" />
             </button>
           ) : (
-            <div />
+            <div style={{ width: 70 }} />
           )}
           <a href="/">
             <img src="/logo.png" alt="sporte logo" />
@@ -55,7 +55,7 @@ const mHeader = ({ hideMenuBar, hideMenuIcon }) => {
           </div>
         </Drawer>
       </Header>
-      {!hideMenuBar && (
+      {/* {!hideMenuBar && (
         <Header
           style={{
             zIndex: 1,
@@ -63,13 +63,8 @@ const mHeader = ({ hideMenuBar, hideMenuIcon }) => {
           }}
           className="header-menu"
         >
-          {/* <button />
-          <button />
-          <button />
-          <button />
-          <button /> */}
         </Header>
-      )}
+      )} */}
     </header>
   );
 };

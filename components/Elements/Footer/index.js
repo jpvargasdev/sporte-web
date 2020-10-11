@@ -15,12 +15,12 @@ const Icon = [
   {
     Logo: LogoFacebook,
     text: 'facebook',
-    url: 'https://www.facebook.com/Ju4np44',
+    url: 'https://www.facebook.com/Sporte-107619361052314/',
   },
   {
     Logo: LogoInstagram,
     text: 'instagram',
-    url: 'https://www.instagram.com/iclown_/',
+    url: 'https://www.instagram.com/sporteoficial/',
   },
 ];
 
@@ -34,23 +34,27 @@ const footerStyle = {
 
 const mFooter = ({
   title,
-}) => (
-  <Footer className="footer" style={footerStyle}>
-    <p>{title}</p>
-    <div>
-      {
-        Icon.map((item) => {
-          const { Logo } = item;
-          return (
-            <a href={item.url}>
-              <Logo key={item.text} className="icon" fontSize="25px" color="white" />
-            </a>
-          );
-        })
-      }
-    </div>
-  </Footer>
-);
+  footerFixed,
+}) => {
+  const classes = footerFixed ? 'fixed' : '';
+  return (
+    <Footer className={`footer footer-${classes}`} style={footerStyle}>
+      <p>{title}</p>
+      <div>
+        {
+          Icon.map((item) => {
+            const { Logo } = item;
+            return (
+              <a key={item.text} href={item.url}>
+                <Logo key={item.text} className="icon" fontSize="25px" color="white" />
+              </a>
+            );
+          })
+        }
+      </div>
+    </Footer>
+  );
+};
 
 mFooter.propTypes = {
   title: PropTypes.string,

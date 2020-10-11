@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+import Head from 'next/head';
 
 function SEO({
   description, lang = 'es', meta, title,
@@ -8,42 +8,20 @@ function SEO({
   const metaDescription = description;
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      meta={[
-        {
-          name: 'description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:title',
-          content: title,
-        },
-        {
-          property: 'og:description',
-          content: metaDescription,
-        },
-        {
-          property: 'og:type',
-          content: 'website',
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary',
-        },
-        {
-          name: 'twitter:title',
-          content: title,
-        },
-        {
-          name: 'twitter:description',
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+    <Head>
+      <title>{title}</title>
+      <meta name="distribution" content="global" />
+      <meta httpEquiv="Content-Language" content={lang} />
+      <meta property="description" content={metaDescription} key="description" />
+      <meta property="og:title" content={title} key="title" />
+      <meta property="og:description" content={metaDescription} key="metadescription" />
+      <meta property="og:type" content="website" key="type" />
+      <meta property="twitter:card" content="summary" key="card" />
+      <meta property="twitter:title" content={title} key="ttitle" />
+      <meta property="twitter:description" content={metaDescription} key="tdescription" />
+      <meta name="Robots" content="all" />
+      <script data-ad-client="ca-pub-7707481234354209" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
+    </Head>
   );
 }
 

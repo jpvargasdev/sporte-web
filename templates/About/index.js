@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { memo, useEffect } from 'react';
 
-// styles
-import './About.scss';
+// firebase
+import getFirebase from '../../firebase.config';
 
 // components
 import renderRichText from '../../components/Base/RichText';
 
+// styles
+import './About.scss';
+
+let datastore = null;
+
 const About = ({ content }) => {
   const ContentText = renderRichText(content);
+  useEffect(() => {
+    async function initFirebase() {
+      datastore = await getFirebase();
+      datastore.analytics().logEvent('user_joined', {
+        page: 'about',
+      });
+    }
+    initFirebase();
+  }, []);
+
   return (
     <section className="about">
       {ContentText}
@@ -15,4 +30,4 @@ const About = ({ content }) => {
   );
 };
 
-export default About;
+export default memo(About);

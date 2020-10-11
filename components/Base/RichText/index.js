@@ -1,14 +1,9 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+import { Block, BLOCKS, Document, Inline, INLINES, MARKS, Text } from '@contentful/rich-text-types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
-const Bold = ({ children }) => <span className="font-bold">{children}</span>;
-
-const Italic = ({ children }) => <span className="italic">{children}</span>;
-
-const Underline = ({ children }) => <span className="underline">{children}</span>;
 
 const Paragraph = ({ children }) => <p>{children}</p>;
 
@@ -34,15 +29,25 @@ const Custom = ({ node }) => {
   );
 };
 
+function defaultInline(type, node) {
+  return (
+    <span key={node.data.target.sys.id}>
+      type: {node.nodeType} id: {node.data.target.sys.id}
+    </span>
+  );
+}
+
 const options = {
   renderMark: {
-    [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
-    [MARKS.ITALIC]: (text) => <Italic>{text}</Italic>,
-    [MARKS.UNDERLINE]: (text) => <Underline>{text}</Underline>,
+    [MARKS.BOLD]: (text) => <b>{text}</b>,
+    [MARKS.ITALIC]: (text) => <i>{text}</i>,
+    [MARKS.UNDERLINE]: (text) => <u>{text}</u>,
+    [MARKS.CODE]: (text) => <code>{text}</code>,
   },
   renderNode: {
+    [BLOCKS.DOCUMENT]: (node, children) => children,
     [BLOCKS.PARAGRAPH]: (node, children) => <Paragraph>{children}</Paragraph>,
-    [BLOCKS.HR]: () => <Hr />,
+    [BLOCKS.HR]: () => <hr />,
     [BLOCKS.HEADING_1]: (node, children) => <H1>{children}</H1>,
     [BLOCKS.HEADING_2]: (node, children) => <H2>{children}</H2>,
     [BLOCKS.HEADING_3]: (node, children) => <H3>{children}</H3>,
@@ -50,6 +55,15 @@ const options = {
     [BLOCKS.HEADING_5]: (node, children) => <H5>{children}</H5>,
     [BLOCKS.HEADING_6]: (node, children) => <H6>{children}</H6>,
     [BLOCKS.EMBEDDED_ASSET]: (node, children) => <Custom node={node} />,
+    [BLOCKS.EMBEDDED_ENTRY]: (node, children) => <div>{children}</div>,
+    [BLOCKS.UL_LIST]: (node, children) => <ul>{children}</ul>,
+    [BLOCKS.OL_LIST]: (node, children) => <ol>{children}</ol>,
+    [BLOCKS.LIST_ITEM]: (node, children) => <li>{children}</li>,
+    [BLOCKS.QUOTE]: (node, children) => <blockquote>{children}</blockquote>,
+    [INLINES.ASSET_HYPERLINK]: (node) => defaultInline(INLINES.ASSET_HYPERLINK, node),
+    [INLINES.ENTRY_HYPERLINK]: (node) => defaultInline(INLINES.ENTRY_HYPERLINK, node),
+    [INLINES.EMBEDDED_ENTRY]: (node) => defaultInline(INLINES.EMBEDDED_ENTRY, node),
+    [INLINES.HYPERLINK]: (node, children) => <a href={node.data.uri}>{children}</a>,
   },
 };
 

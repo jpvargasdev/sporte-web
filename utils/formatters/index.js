@@ -12,6 +12,7 @@ export function injectLinkHandler(card) {
     query: { id },
   });
   const linkHandler = () => router.push(getHref(card.sys.id));
+  // eslint-disable-next-line no-param-reassign
   card.linkHandler = linkHandler;
   return card;
 }
@@ -26,6 +27,7 @@ export function shapeContent(structure, cards) {
   const widgetsToRender = [];
   page.forEach(({ widget }) => {
     const data = [];
+    // eslint-disable-next-line no-plusplus
     for (let i = 0; i < widget.items; i++) {
       if (cards.length > 0) {
         const card = injectLinkHandler(cards.shift());

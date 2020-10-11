@@ -9,6 +9,7 @@ main {
   @include respond-to("mobile") {
     width: 95%;
     overflow-x: hidden;
+    margin-top: 2em;
   }
   @include respond-to("small") {
     width: 95%;
@@ -23,7 +24,6 @@ main {
 
 .layout {
   .site-layout-content {
-    background-color: white;
     padding-left: 1.5em;
     padding-right: 1.5em;
     padding-bottom: 3em;
@@ -31,5 +31,5 @@ main {
 }
 
 .ant-layout {
-  background-color: #f0f2f5;
+  background-color: whitesmoke;
 }

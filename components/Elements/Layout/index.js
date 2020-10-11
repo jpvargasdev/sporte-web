@@ -10,7 +10,13 @@ import './layout.module.scss';
 
 const { Content } = Layout;
 
-const mLayout = ({ children, useBackground = true, hideMenuBar = false, hideMenuIcon = false }) => {
+const mLayout = ({
+  children,
+  useBackground = true,
+  hideMenuBar = false,
+  hideMenuIcon = false,
+  footerFixed = false,
+}) => {
   let styleContainer = '';
   if (useBackground) styleContainer = 'site-layout-content';
   return (
@@ -22,7 +28,7 @@ const mLayout = ({ children, useBackground = true, hideMenuBar = false, hideMenu
       <BackTop>
         <ButtonFloat />
       </BackTop>
-      <Footer />
+      <Footer footerFixed={footerFixed} />
     </Layout>
   );
 };

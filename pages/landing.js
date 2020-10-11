@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 // components
 import Layout from '../components/Elements/Layout';
@@ -6,7 +6,6 @@ import Seo from '../components/Base/Seo';
 
 // api
 import * as client from '../api';
-import loadDb from '../firebase.config';
 
 // templates
 import Landing from '../templates/Landing';
@@ -17,7 +16,7 @@ import { PAGES_IDS } from '../constants';
 const LandingPage = ({ page }) => (
   <>
     <Seo title={page.seoTitle} description={page.description} />
-    <Layout useBackground={false} hideMenuIcon hideMenuBar>
+    <Layout useBackground={false} hideMenuIcon hideMenuBar footerFixed>
       <Landing content={page.content} />
     </Layout>
   </>

@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo, useEffect } from 'react';
 
-// styles
-import './Article.scss';
+// firebase
+import getFirebase from '../../firebase.config';
 
 // components
 import renderRichText from '../../components/Base/RichText';
@@ -10,7 +10,23 @@ import PublicityBanner, { BANNER_SIZE } from '../../components/Base/PublicityBan
 import WidgetFabric from '../../components/Helpers/WidgetFabric';
 import Share from '../../components/Base/Share';
 
+// styles
+import './Article.scss';
+
+let datastore = null;
+
 const Article = ({ data, structure }) => {
+  useEffect(() => {
+    async function initFirebase() {
+      datastore = await getFirebase();
+      datastore.analytics().logEvent('user_joined', {
+        page: 'article',
+        title: data.title || '',
+      });
+    }
+    initFirebase();
+  }, []);
+
   if (!data.content) return null;
   const ContentText = renderRichText(data.content);
   const { widget } = structure.page[0];
@@ -52,4 +68,4 @@ const Article = ({ data, structure }) => {
   );
 };
 
-export default Article;
+export default memo(Article);
