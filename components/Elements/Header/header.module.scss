@@ -8,8 +8,7 @@
   top: 0;
   z-index: 10;
   background-color: white;
-  height: 5em;
-  border-bottom: 1px solid #d8d8d8;
+  box-shadow: $elevation0;
 
   @include respond-to("mobile") {
     height: 5em;
@@ -18,7 +17,10 @@
     height: 5em;
   }
   @include respond-to("medium") {
-    height: 5em;
+    height: 6em;
+  }
+  @include respond-to("large") {
+    height: 6em;
   }
 
   img {

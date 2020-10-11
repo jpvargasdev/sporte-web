@@ -1,13 +1,12 @@
 @import "../../../styles/settings";
 
 main {
-  width: 95%;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 5em;
 
   @include respond-to("mobile") {
-    width: 95%;
+    width: 99%;
     overflow-x: hidden;
     margin-top: 2em;
   }
@@ -24,9 +23,13 @@ main {
 
 .layout {
   .site-layout-content {
+    background-color: white;
     padding-left: 1.5em;
     padding-right: 1.5em;
     padding-bottom: 3em;
+    box-shadow: $elevation1;
+    margin-bottom: 1.5em;
+    margin-top: 3em;
   }
 }
 
