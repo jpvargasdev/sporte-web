@@ -97,18 +97,20 @@ function Landing({ content }) {
             {Content}
           </div>
           <div className="landing-form">
-            <h3>¿Quieres saber mas de Sporte? </h3>
-            <h5>
-              Déjanos tus datos:
-            </h5>
-            <form className="input-container`">
+            <div className="landing-title">
+              <h3> <b> ¿Quieres saber mas de Sporte? </b> </h3>
+              <h5>
+                Déjanos tus datos:
+              </h5>
+            </div>
+            <form className="landing-input">
               {isValidated && (
                 <h5 style={{ color: 'red' }}>{errorMessage}</h5>
               )}
-              <input onChange={(e) => setName(e.target.value)} className="input-container input-container-input" type="name" id="name" placeholder="Ingresa tu nombre*" />
-              <input onChange={(e) => setEmail(e.target.value)} className="input-container input-container-input" type="email" id="email" placeholder="Ingresa tu correo electrónico*" />
-              <input onChange={(e) => setPhone(e.target.value)} className="input-container input-container-input" type="phone" id="phone" placeholder="Ingresa tu número telefonico*" />
-              <button className="input-container input-container-button" onClick={onPress}>Unirse</button>
+              <input onChange={(e) => setName(e.target.value)} className="landing-input_field" type="name" id="name" placeholder="Ingresa tu nombre*" />
+              <input onChange={(e) => setEmail(e.target.value)} className="landing-input_field" type="email" id="email" placeholder="Ingresa tu correo electrónico*" />
+              <input onChange={(e) => setPhone(e.target.value)} className="landing-input_field" type="phone" id="phone" placeholder="Ingresa tu número telefonico*" />
+              <button className="landing-input_button" onClick={onPress}>Unirse</button>
             </form>
           </div>
         </div>

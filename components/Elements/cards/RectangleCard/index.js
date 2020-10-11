@@ -34,11 +34,11 @@ CardWidth.propTypes = {
 };
 
 CardWidth.defaultProps = {
-  title: 'test',
+  title: '',
   bannerImage: {
-    title: 'test',
+    title: '',
     file: {
-      url: 'testel c',
+      url: '',
     },
   },
 };
