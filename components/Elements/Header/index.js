@@ -14,14 +14,7 @@ const mHeader = ({ hideMenuBar, hideMenuIcon }) => {
   const [isHeaderOpen, setHeader] = useState(false);
 
   return (
-    <Header
-      style={{
-        position: 'fixed',
-        zIndex: 1,
-        width: '100%',
-      }}
-      className="header"
-    >
+    <Header className="header">
       <div className="header-vertical">
         {!hideMenuIcon ? (
           <button className="menu_icon" type="button" onClick={() => setHeader(true)}>
