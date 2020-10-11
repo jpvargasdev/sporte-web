@@ -20,6 +20,7 @@ function SEO({
       <meta property="twitter:title" content={title} key="ttitle" />
       <meta property="twitter:description" content={metaDescription} key="tdescription" />
       <meta name="Robots" content="all" />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
       <script data-ad-client="ca-pub-7707481234354209" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
     </Head>
   );
