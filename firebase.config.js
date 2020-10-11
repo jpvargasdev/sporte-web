@@ -4,7 +4,10 @@ import '@firebase/firestore';
 import '@firebase/auth';
 import '@firebase/analytics';
 
+let firebaseInstance = null;
+
 const getFirebase = () => {
+  if (firebaseInstance != null) return firebaseInstance;
   try {
     const config = {
       apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -31,7 +34,8 @@ const getFirebase = () => {
     }
   }
 
-  return firebase;
+  firebaseInstance = firebase;
+  return firebaseInstance;
 };
 
 export default getFirebase;

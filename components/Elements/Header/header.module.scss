@@ -9,19 +9,7 @@
   z-index: 10;
   background-color: white;
   box-shadow: $elevation0;
-
-  @include respond-to("mobile") {
-    height: 5em;
-  }
-  @include respond-to("small") {
-    height: 5em;
-  }
-  @include respond-to("medium") {
-    height: 6em;
-  }
-  @include respond-to("large") {
-    height: 6em;
-  }
+  height: 5em;
 
   img {
     width: 90px;
@@ -78,6 +66,7 @@
 }
 
 .ant-layout-header {
+  z-index: 10;
   @include respond-to("mobile") {
     padding: 0px;
   }

@@ -16,7 +16,7 @@ import getFirebase from '../../firebase.config';
 import renderRichText from '../../components/Base/RichText';
 
 // style
-import './Landing.scss';
+import './Landing.module.scss';
 
 let datastore = null;
 const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -73,14 +73,14 @@ function Landing({ content }) {
         phone,
         name: name.toLowerCase(),
       }).then((docRef) => {
-        console.log('Document written with ID: ', docRef.id);
+        // console.log('Document written with ID: ', docRef.id);
         datastore.analytics().logEvent('user_registered', {
           page: 'landing',
           id: docRef.id,
         });
       })
         .catch((err) => {
-          console.error('Error adding document: ', err);
+          // console.error('Error adding document: ', err);
         })
         .finally(() => {
           router.push('/');

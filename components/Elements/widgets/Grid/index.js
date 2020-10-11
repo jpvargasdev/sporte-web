@@ -8,7 +8,6 @@ import ImageCard from '../../cards/ImageCard';
 const Grid = ({
   cards,
 }) => {
-  console.log(cards);
   return (
     <section className="container_grid">
       {

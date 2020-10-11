@@ -7,7 +7,7 @@ import getFirebase from '../../firebase.config';
 import renderRichText from '../../components/Base/RichText';
 
 // styles
-import './About.scss';
+import './About.module.scss';
 
 let datastore = null;
 

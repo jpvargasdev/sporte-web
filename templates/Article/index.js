@@ -11,7 +11,7 @@ import WidgetFabric from '../../components/Helpers/WidgetFabric';
 import Share from '../../components/Base/Share';
 
 // styles
-import './Article.scss';
+import './Article.module.scss';
 
 let datastore = null;
 

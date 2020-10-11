@@ -5,6 +5,8 @@
   width: 100%;
   margin-bottom: 10em;
   background-color: whitesmoke;
+  display: flex;
+  flex: 1;
 
   li p {
     font-size: 16px;
@@ -15,17 +17,16 @@
 
   &-content {
     display: flex;
+    position: absolute;
     flex: 1;
     flex-direction: column;
 
     @include respond-to("small") {
       flex-direction: row;
     }
-  
-    position: absolute;
+
     left: 10px;
     right: 10px;
-
     @include respond-to("large") {
       left: 10%;
       right: 10%;
@@ -54,11 +55,11 @@
     box-shadow: $elevation3;
     padding: 3em;
     display: flex;
-    flex: 0.6;
     flex-direction: column;
-    justify-content: center;
+    flex: 0.6;
+    justify-content: space-between;
     margin: 10px;
-    height: 450px;
+    height: 550px;
     @include respond-to("small") {
       margin-bottom: 0px;
     }
@@ -80,13 +81,16 @@
   .input-container {
     margin-bottom: 20px;
     display: flex;
-    flex-direction: column;
-    flex: 1;
+    flex-direction: row;
+
+    @include respond-to("small") {
+      flex-direction: column;
+    }
   
     &-input {
       width: 100%;
-      padding: 1em;
-      height: 3em;
+      padding: 10px;
+      height: 50px;
       border: 2px solid blue;
       float: left;
     }

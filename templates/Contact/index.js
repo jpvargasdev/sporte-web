@@ -1,5 +1,5 @@
 import React, { memo, useEffect } from 'react';
-import './Contact.scss';
+import './Contact.module.scss';
 
 // firebase
 import getFirebase from '../../firebase.config';
