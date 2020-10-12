@@ -34,6 +34,9 @@ function Landing({ content }) {
   useEffect(() => {
     async function initFirebase() {
       datastore = await getFirebase();
+      if (datastore.auth().currentUser === null) {
+        datastore.auth().signInAnonymously();
+      }
       datastore.analytics().logEvent('user_joined', {
         page: 'landing',
       });
@@ -83,7 +86,7 @@ function Landing({ content }) {
           // console.error('Error adding document: ', err);
         })
         .finally(() => {
-          router.push('/');
+          router.replace('/');
         });
     }
   }, [email, name, phone]);
